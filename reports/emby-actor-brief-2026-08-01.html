@@ -62,7 +62,19 @@
       background: var(--paper); border: 1px solid var(--line); border-radius: 26px; padding: 22px; box-shadow: 0 12px 34px rgba(81,132,140,.12); backdrop-filter: blur(14px);
     }
     .actor-head { display:flex; gap: 14px; align-items: center; }
-    .avatar { width: 58px; height: 58px; border-radius: 20px; display:flex; align-items:center; justify-content:center; font-size: 28px; font-weight: 900; color: white; background: linear-gradient(135deg, var(--sakura), var(--mint)); box-shadow: 0 10px 24px rgba(255,143,171,.24); }
+    .avatar-wrap { width: 68px; height: 68px; border-radius: 20px; overflow: hidden; flex-shrink: 0; box-shadow: 0 10px 24px rgba(255,143,171,.24); border: 2px solid #fff; }
+    .avatar-img { width: 100%; height: 100%; object-fit: cover; }
+    .avatar { width: 100%; height: 100%; display:flex; align-items:center; justify-content:center; font-size: 28px; font-weight: 900; color: white; background: linear-gradient(135deg, var(--sakura), var(--mint)); }
+    .rec-head { display: flex; gap: 12px; align-items: center; margin-bottom: 8px; }
+    .rec-avatar-img { width: 46px; height: 46px; border-radius: 12px; object-fit: cover; flex-shrink: 0; border: 1px solid var(--line); }
+    .avatar-small { width: 46px; height: 46px; border-radius: 12px; background: var(--mint-soft); color: var(--ink); display:flex; align-items:center; justify-content:center; font-weight: 900; flex-shrink: 0; }
+    .missav-btn { display: inline-flex; align-items: center; gap: 4px; background: linear-gradient(135deg, #ff6b9a, #ff8fab); color: #fff; text-decoration: none; padding: 4px 10px; border-radius: 8px; font-size: 12px; font-weight: 800; margin-left: 8px; box-shadow: 0 4px 12px rgba(255,107,154,.25); }
+    .missav-btn:hover { background: #ff4785; text-decoration: none; }
+    .missav-mini-btn { display: inline-flex; align-items: center; background: rgba(255,143,171,.25); color: #d95d7d; text-decoration: none; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 800; margin-left: 6px; }
+    .missav-mini-btn:hover { background: rgba(255,143,171,.4); text-decoration: none; }
+    .search-btn { display:inline-flex; align-items:center; gap: 4px; text-decoration:none; color: var(--ink); background: rgba(0,0,0,.05); border: 1px solid var(--line); padding: 8px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; }
+    .table-avatar { width: 42px; height: 42px; border-radius: 12px; object-fit: cover; border: 1px solid var(--line); }
+    .table-avatar-fallback { width: 42px; height: 42px; border-radius: 12px; background: var(--mint-soft); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; color:#28746a; }
     .rank { color: var(--sakura); font-weight: 900; font-size: 12px; letter-spacing: .16em; }
     .actor-card h3 { font-size: 24px; font-weight: 900; line-height: 1.2; }
     .actor-sub { color: var(--muted); font-size: 13px; margin-top: 4px; }
@@ -136,7 +148,7 @@
       <div class="grid">
         <article class="actor-card">
           <div class="actor-head">
-            <div class="avatar">き</div>
+            <div class="avatar-wrap"><div class="avatar">き</div></div>
             <div>
               <div class="rank">#01</div>
               <h3>きとるね川口</h3>
@@ -149,7 +161,7 @@
             <div class="mini-box"><span>最近入库</span><strong>MNGS-053 単身赴任から半年… 久しぶりの自宅で真っ先に目にしたのは僕の愛する妻が</strong></div>
           </div>
           <div class="links-row"><span class="muted">无外部档案链接</span></div>
-          <details class="news-box">
+          <details class="news-box" open>
             <summary>🍑 JavBus 新番 / 最新作品</summary>
             <div class="news-empty">近30天未检索到足够可靠的公开新消息。</div>
           </details>
@@ -157,7 +169,7 @@
         
         <article class="actor-card">
           <div class="actor-head">
-            <div class="avatar">豆</div>
+            <div class="avatar-wrap"><div class="avatar">豆</div></div>
             <div>
               <div class="rank">#02</div>
               <h3>豆沢豆太郎</h3>
@@ -170,7 +182,7 @@
             <div class="mini-box"><span>最近入库</span><strong>MFYD-063 「どっちの夫が絶倫でイカしたチ○ポか真剣勝負 （ガチンコ）...！！」</strong></div>
           </div>
           <div class="links-row"><span class="muted">无外部档案链接</span></div>
-          <details class="news-box">
+          <details class="news-box" open>
             <summary>🍑 JavBus 新番 / 最新作品</summary>
             <div class="news-empty">近30天未检索到足够可靠的公开新消息。</div>
           </details>
@@ -178,7 +190,7 @@
         
         <article class="actor-card">
           <div class="actor-head">
-            <div class="avatar">愛</div>
+            <div class="avatar-wrap"><div class="avatar">愛</div></div>
             <div>
               <div class="rank">#03</div>
               <h3>愛弓りょう</h3>
@@ -199,15 +211,15 @@
             <div class="mini-box"><span>最近入库</span><strong>JUR-563 昔私の事が好きだった粗チンの幼馴染が、性欲旺盛な巨チン男に進化していたの</strong></div>
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:33901" target="_blank" rel="noopener noreferrer">MetaTube</a></div>
-          <details class="news-box">
+          <details class="news-box" open>
             <summary>🍑 JavBus 新番 / 最新作品</summary>
-            <ul class="news-list"><li><a href="https://www.javbus.com/JUR-758" target="_blank" rel="noopener noreferrer">JUR-758｜「ねぇ、何でさっきしてくれなかったの？」 酔ってキス魔に変貌したパワハラ女上司 時間も場所も忘れて朝まで舐め合い不倫性交に溺れた 愛弓りょう</a><span class="news-meta">2026-07-24 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/JUR-734" target="_blank" rel="noopener noreferrer">JUR-734｜性欲が強過ぎる彼女の母がどストライクな僕は、彼女に内緒で何度も何度も勃起チ○ポを捧げています…。 愛弓りょう</a><span class="news-meta">2026-06-19 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/JUR-708" target="_blank" rel="noopener noreferrer">JUR-708｜吹き出る汗、吹き飛ぶ理性―。 宙に浮くほどイキ飛び跳ねる、真夏の大痙攣エビ反り不倫SEX。 愛弓りょう</a><span class="news-meta">2026-05-21 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
+            <ul class="news-list"><li><a href="https://www.javbus.com/JUR-758" target="_blank" rel="noopener noreferrer">JUR-758｜「ねぇ、何でさっきしてくれなかったの？」 酔ってキス魔に変貌したパワハラ女上司 時間も場所も忘れて朝まで舐め合い不倫性交に溺れた 愛弓りょう</a> <a class="missav-btn" href="https://missav.ws/en/jur-758" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-07-24 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/JUR-734" target="_blank" rel="noopener noreferrer">JUR-734｜性欲が強過ぎる彼女の母がどストライクな僕は、彼女に内緒で何度も何度も勃起チ○ポを捧げています…。 愛弓りょう</a> <a class="missav-btn" href="https://missav.ws/en/jur-734" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-06-19 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/JUR-708" target="_blank" rel="noopener noreferrer">JUR-708｜吹き出る汗、吹き飛ぶ理性―。 宙に浮くほどイキ飛び跳ねる、真夏の大痙攣エビ反り不倫SEX。 愛弓りょう</a> <a class="missav-btn" href="https://missav.ws/en/jur-708" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-05-21 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
         
         <article class="actor-card">
           <div class="actor-head">
-            <div class="avatar">肉</div>
+            <div class="avatar-wrap"><div class="avatar">肉</div></div>
             <div>
               <div class="rank">#04</div>
               <h3>肉尊</h3>
@@ -220,7 +232,7 @@
             <div class="mini-box"><span>最近入库</span><strong>SONE-347 キモすぎる変態義父のち●こがめちゃくちゃ大きくて…女子大生の私は嫌でた</strong></div>
           </div>
           <div class="links-row"><span class="muted">无外部档案链接</span></div>
-          <details class="news-box">
+          <details class="news-box" open>
             <summary>🍑 JavBus 新番 / 最新作品</summary>
             <div class="news-empty">近30天未检索到足够可靠的公开新消息。</div>
           </details>
@@ -228,7 +240,7 @@
         
         <article class="actor-card">
           <div class="actor-head">
-            <div class="avatar">夢</div>
+            <div class="avatar-wrap"><div class="avatar">夢</div></div>
             <div>
               <div class="rank">#05</div>
               <h3>夢乃あいか</h3>
@@ -249,15 +261,15 @@
             <div class="mini-box"><span>最近入库</span><strong>SNOS-238 性器共鳴 男と女のダブル媚薬トランス覚醒キメセク 夢乃あいか</strong></div>
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:9657" target="_blank" rel="noopener noreferrer">MetaTube</a></div>
-          <details class="news-box">
+          <details class="news-box" open>
             <summary>🍑 JavBus 新番 / 最新作品</summary>
-            <ul class="news-list"><li><a href="https://www.javbus.com/SNOS-199" target="_blank" rel="noopener noreferrer">SNOS-199｜就職した水着メーカーは女性社員が水着姿の世界。勃起してもHカップの教育担当・夢乃さんが抜いてくれるのでボクの金玉は毎日カラッポ 夢乃あいか</a><span class="news-meta">2026-04-23 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-159" target="_blank" rel="noopener noreferrer">SNOS-159｜人生…返してください…性接待、枕営業、ルッキズム文化…女子アナを襲った闇深い強要レ×プ証拠VTRをご覧ください。 夢乃あいか</a><span class="news-meta">2026-03-19 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-072" target="_blank" rel="noopener noreferrer">SNOS-072｜媚薬がすぐ効くあいかちゃんのお風呂の水をほぼ媚薬にしてみた！（プールも）そしたらやっばいガンギメセク！ 夢乃あいか</a><span class="news-meta">2026-01-22 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
+            <ul class="news-list"><li><a href="https://www.javbus.com/SNOS-199" target="_blank" rel="noopener noreferrer">SNOS-199｜就職した水着メーカーは女性社員が水着姿の世界。勃起してもHカップの教育担当・夢乃さんが抜いてくれるのでボクの金玉は毎日カラッポ 夢乃あいか</a> <a class="missav-btn" href="https://missav.ws/en/snos-199" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-04-23 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-159" target="_blank" rel="noopener noreferrer">SNOS-159｜人生…返してください…性接待、枕営業、ルッキズム文化…女子アナを襲った闇深い強要レ×プ証拠VTRをご覧ください。 夢乃あいか</a> <a class="missav-btn" href="https://missav.ws/en/snos-159" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-03-19 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-072" target="_blank" rel="noopener noreferrer">SNOS-072｜媚薬がすぐ効くあいかちゃんのお風呂の水をほぼ媚薬にしてみた！（プールも）そしたらやっばいガンギメセク！ 夢乃あいか</a> <a class="missav-btn" href="https://missav.ws/en/snos-072" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-01-22 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
         
         <article class="actor-card">
           <div class="actor-head">
-            <div class="avatar">庵</div>
+            <div class="avatar-wrap"><div class="avatar">庵</div></div>
             <div>
               <div class="rank">#06</div>
               <h3>庵ひめか</h3>
@@ -276,15 +288,15 @@
             <div class="mini-box"><span>最近入库</span><strong>JUR-305 寝取らせ串刺し輪● 愛する妻を深奥まで犯し尽くして下さい―。 庵ひめか</strong></div>
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:35222" target="_blank" rel="noopener noreferrer">MetaTube</a></div>
-          <details class="news-box">
+          <details class="news-box" open>
             <summary>🍑 JavBus 新番 / 最新作品</summary>
-            <ul class="news-list"><li><a href="https://www.javbus.com/OFES-011" target="_blank" rel="noopener noreferrer">OFES-011｜派遣マッサージ師にきわどい秘部を触られすぎて、快楽に耐え切れず寝取られました。 庵ひめか</a><span class="news-meta">2025-07-25 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/JUR-305" target="_blank" rel="noopener noreferrer">JUR-305｜寝取らせ串刺し輪● 愛する妻を深奥まで犯し尽くして下さい―。 庵ひめか</a><span class="news-meta">2025-06-06 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/URE-122" target="_blank" rel="noopener noreferrer">URE-122｜原作:師走の翁 人妻催●コンビニ肉便器 カルト的人気同人作品が ついに完全実写化！！ 巨乳妻を常識改変！！ 職場限定オナホとして 公衆便所肉穴に特別採用！！ 庵ひめか</a><span class="news-meta">2025-05-09 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
+            <ul class="news-list"><li><a href="https://www.javbus.com/OFES-011" target="_blank" rel="noopener noreferrer">OFES-011｜派遣マッサージ師にきわどい秘部を触られすぎて、快楽に耐え切れず寝取られました。 庵ひめか</a> <a class="missav-btn" href="https://missav.ws/en/ofes-011" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2025-07-25 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/JUR-305" target="_blank" rel="noopener noreferrer">JUR-305｜寝取らせ串刺し輪● 愛する妻を深奥まで犯し尽くして下さい―。 庵ひめか</a> <a class="missav-btn" href="https://missav.ws/en/jur-305" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2025-06-06 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/URE-122" target="_blank" rel="noopener noreferrer">URE-122｜原作:師走の翁 人妻催●コンビニ肉便器 カルト的人気同人作品が ついに完全実写化！！ 巨乳妻を常識改変！！ 職場限定オナホとして 公衆便所肉穴に特別採用！！ 庵ひめか</a> <a class="missav-btn" href="https://missav.ws/en/ure-122" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2025-05-09 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
         
         <article class="actor-card">
           <div class="actor-head">
-            <div class="avatar">弥</div>
+            <div class="avatar-wrap"><div class="avatar">弥</div></div>
             <div>
               <div class="rank">#07</div>
               <h3>弥生みづき</h3>
@@ -303,15 +315,15 @@
             <div class="mini-box"><span>最近入库</span><strong>NIMA-050 実写版！子産み島 後編～週7で産めるメスたち～ 天馬ゆい 弥生みづき </strong></div>
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:9482" target="_blank" rel="noopener noreferrer">MetaTube</a></div>
-          <details class="news-box">
+          <details class="news-box" open>
             <summary>🍑 JavBus 新番 / 最新作品</summary>
-            <ul class="news-list"><li><a href="https://www.javbus.com/BIBIVR-169" target="_blank" rel="noopener noreferrer">BIBIVR-169｜【VR】都内某所にあるハメ放題のセクシーラウンジで人生終了するくらい金も精子も注ぎ込み！！たっぷりじゅぽじゅぽW責め 弥生みづき 末広純</a><span class="news-meta">2026-07-02 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SAVR-1111" target="_blank" rel="noopener noreferrer">SAVR-1111｜【VR】高級デリ嬢をキメセクで堕とす！自らのルックスとテクニックを自慢してくる生意気本指No.1に媚薬を仕込んで連続アクメで徹底的に追い込んでみた。 弥生みづき</a><span class="news-meta">2026-06-24 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SAVR-1042" target="_blank" rel="noopener noreferrer">SAVR-1042｜【VR】担任のみづき先生が生徒の将来を見据えて予告無しに射精耐久力を測りに来る抜き打ちSEX 弥生みづき</a><span class="news-meta">2026-05-02 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
+            <ul class="news-list"><li><a href="https://www.javbus.com/BIBIVR-169" target="_blank" rel="noopener noreferrer">BIBIVR-169｜【VR】都内某所にあるハメ放題のセクシーラウンジで人生終了するくらい金も精子も注ぎ込み！！たっぷりじゅぽじゅぽW責め 弥生みづき 末広純</a> <a class="missav-btn" href="https://missav.ws/en/bibivr-169" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-07-02 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SAVR-1111" target="_blank" rel="noopener noreferrer">SAVR-1111｜【VR】高級デリ嬢をキメセクで堕とす！自らのルックスとテクニックを自慢してくる生意気本指No.1に媚薬を仕込んで連続アクメで徹底的に追い込んでみた。 弥生みづき</a> <a class="missav-btn" href="https://missav.ws/en/savr-1111" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-06-24 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SAVR-1042" target="_blank" rel="noopener noreferrer">SAVR-1042｜【VR】担任のみづき先生が生徒の将来を見据えて予告無しに射精耐久力を測りに来る抜き打ちSEX 弥生みづき</a> <a class="missav-btn" href="https://missav.ws/en/savr-1042" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-05-02 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
         
         <article class="actor-card">
           <div class="actor-head">
-            <div class="avatar">奥</div>
+            <div class="avatar-wrap"><div class="avatar">奥</div></div>
             <div>
               <div class="rank">#08</div>
               <h3>奥田咲</h3>
@@ -332,15 +344,15 @@
             <div class="mini-box"><span>最近入库</span><strong>SNOS-046 「私…おばさんなのに…」娘のすぐ傍で痴●され抵抗しても感じ始め、遂には</strong></div>
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:2098" target="_blank" rel="noopener noreferrer">MetaTube</a></div>
-          <details class="news-box">
+          <details class="news-box" open>
             <summary>🍑 JavBus 新番 / 最新作品</summary>
-            <ul class="news-list"><li><a href="https://www.javbus.com/MFYD-139" target="_blank" rel="noopener noreferrer">MFYD-139｜S1×TAMEIKE20周年記念コラボ作品 田舎に帰省してきた発情期痴女（兄嫁）とドロドロSEXをしたあの夏ー。【汗だくだく、ザーメンドクドク】 奥田咲</a><span class="news-meta">2026-05-14 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-153" target="_blank" rel="noopener noreferrer">SNOS-153｜むっちり巨乳で強●ボッキさせてそのままズッポリ 性欲モンスター奥様の入れ喰い露出おっぱい逆ナンパ 奥田咲</a><span class="news-meta">2026-03-05 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-082" target="_blank" rel="noopener noreferrer">SNOS-082｜彼女のマッマが女性ホルモン真っ盛りで僕のチ●ポを横取り挿入マ●コ 奥田咲</a><span class="news-meta">2026-02-05 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
+            <ul class="news-list"><li><a href="https://www.javbus.com/MFYD-139" target="_blank" rel="noopener noreferrer">MFYD-139｜S1×TAMEIKE20周年記念コラボ作品 田舎に帰省してきた発情期痴女（兄嫁）とドロドロSEXをしたあの夏ー。【汗だくだく、ザーメンドクドク】 奥田咲</a> <a class="missav-btn" href="https://missav.ws/en/mfyd-139" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-05-14 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-153" target="_blank" rel="noopener noreferrer">SNOS-153｜むっちり巨乳で強●ボッキさせてそのままズッポリ 性欲モンスター奥様の入れ喰い露出おっぱい逆ナンパ 奥田咲</a> <a class="missav-btn" href="https://missav.ws/en/snos-153" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-03-05 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-082" target="_blank" rel="noopener noreferrer">SNOS-082｜彼女のマッマが女性ホルモン真っ盛りで僕のチ●ポを横取り挿入マ●コ 奥田咲</a> <a class="missav-btn" href="https://missav.ws/en/snos-082" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-02-05 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
         
         <article class="actor-card">
           <div class="actor-head">
-            <div class="avatar">木</div>
+            <div class="avatar-wrap"><div class="avatar">木</div></div>
             <div>
               <div class="rank">#09</div>
               <h3>木村浩之</h3>
@@ -353,7 +365,7 @@
             <div class="mini-box"><span>最近入库</span><strong>JUR-305 寝取らせ串刺し輪● 愛する妻を深奥まで犯し尽くして下さい―。 庵ひめか</strong></div>
           </div>
           <div class="links-row"><span class="muted">无外部档案链接</span></div>
-          <details class="news-box">
+          <details class="news-box" open>
             <summary>🍑 JavBus 新番 / 最新作品</summary>
             <div class="news-empty">近30天未检索到足够可靠的公开新消息。</div>
           </details>
@@ -361,7 +373,7 @@
         
         <article class="actor-card">
           <div class="actor-head">
-            <div class="avatar">佐</div>
+            <div class="avatar-wrap"><div class="avatar">佐</div></div>
             <div>
               <div class="rank">#10</div>
               <h3>佐山愛</h3>
@@ -382,15 +394,15 @@
             <div class="mini-box"><span>最近入库</span><strong>MIMK-217 実写版 夫の連れ子に、困ってます。 キモエロい性欲モンスターの絶倫チ○</strong></div>
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:4368" target="_blank" rel="noopener noreferrer">MetaTube</a> <a class="pill-link" href="https://www.themoviedb.org/person/5901602" target="_blank" rel="noopener noreferrer">TheMovieDb</a></div>
-          <details class="news-box">
+          <details class="news-box" open>
             <summary>🍑 JavBus 新番 / 最新作品</summary>
-            <ul class="news-list"><li><a href="https://www.javbus.com/MXGS-224_2026-04-15" target="_blank" rel="noopener noreferrer">MXGS-224｜【AIリマスター版】淫乱感染病棟 第三章 佐山愛</a><span class="news-meta">2026-04-15 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/DV-901_2026-03-26" target="_blank" rel="noopener noreferrer">DV-901｜【AIリマスター版】平成生まれAV女優≪佐山愛≫の素人男優オーディション</a><span class="news-meta">2026-03-26 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/MXGS-172_2025-12-15" target="_blank" rel="noopener noreferrer">MXGS-172｜【AIリマスター版】俺の嫁、愛（ラブ）。 佐山愛</a><span class="news-meta">2025-12-15 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
+            <ul class="news-list"><li><a href="https://www.javbus.com/MXGS-224_2026-04-15" target="_blank" rel="noopener noreferrer">MXGS-224｜【AIリマスター版】淫乱感染病棟 第三章 佐山愛</a> <a class="missav-btn" href="https://missav.ws/en/mxgs-224" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-04-15 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/DV-901_2026-03-26" target="_blank" rel="noopener noreferrer">DV-901｜【AIリマスター版】平成生まれAV女優≪佐山愛≫の素人男優オーディション</a> <a class="missav-btn" href="https://missav.ws/en/dv-901" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-03-26 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/MXGS-172_2025-12-15" target="_blank" rel="noopener noreferrer">MXGS-172｜【AIリマスター版】俺の嫁、愛（ラブ）。 佐山愛</a> <a class="missav-btn" href="https://missav.ws/en/mxgs-172" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2025-12-15 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
         
         <article class="actor-card">
           <div class="actor-head">
-            <div class="avatar">松</div>
+            <div class="avatar-wrap"><div class="avatar">松</div></div>
             <div>
               <div class="rank">#11</div>
               <h3>松本菜奈実</h3>
@@ -411,15 +423,15 @@
             <div class="mini-box"><span>最近入库</span><strong>MTALL-140 体育大生の汚部屋にクレーム凸したらヤられてヤって抜かずの連続中出し9</strong></div>
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:8149" target="_blank" rel="noopener noreferrer">MetaTube</a></div>
-          <details class="news-box">
+          <details class="news-box" open>
             <summary>🍑 JavBus 新番 / 最新作品</summary>
-            <ul class="news-list"><li><a href="https://www.javbus.com/JYMA-108" target="_blank" rel="noopener noreferrer">JYMA-108｜夫が出張中に欲情して男達のチ○ポを喰い漁る 爆乳尻オナホ妻 マゾ痴女のドスケベ嫁が肉感ボディでイキまくる 松本菜奈実</a><span class="news-meta">2026-06-19 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/AVSA-432" target="_blank" rel="noopener noreferrer">AVSA-432｜逆バニー美爆乳レイヤー オフ会サークルの男達とデカパイを揺らし生ハメしまくってザーメンぶっかけ輪交中出しSEX！！ 松本菜奈実</a><span class="news-meta">2026-05-08 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/NACT-122" target="_blank" rel="noopener noreferrer">NACT-122｜連鎖NTR 繰り返す寝取り寝取られ 松本菜奈実</a><span class="news-meta">2026-05-04 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
+            <ul class="news-list"><li><a href="https://www.javbus.com/JYMA-108" target="_blank" rel="noopener noreferrer">JYMA-108｜夫が出張中に欲情して男達のチ○ポを喰い漁る 爆乳尻オナホ妻 マゾ痴女のドスケベ嫁が肉感ボディでイキまくる 松本菜奈実</a> <a class="missav-btn" href="https://missav.ws/en/jyma-108" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-06-19 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/AVSA-432" target="_blank" rel="noopener noreferrer">AVSA-432｜逆バニー美爆乳レイヤー オフ会サークルの男達とデカパイを揺らし生ハメしまくってザーメンぶっかけ輪交中出しSEX！！ 松本菜奈実</a> <a class="missav-btn" href="https://missav.ws/en/avsa-432" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-05-08 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/NACT-122" target="_blank" rel="noopener noreferrer">NACT-122｜連鎖NTR 繰り返す寝取り寝取られ 松本菜奈実</a> <a class="missav-btn" href="https://missav.ws/en/nact-122" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-05-04 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
         
         <article class="actor-card">
           <div class="actor-head">
-            <div class="avatar">鷲</div>
+            <div class="avatar-wrap"><div class="avatar">鷲</div></div>
             <div>
               <div class="rank">#12</div>
               <h3>鷲尾めい</h3>
@@ -440,9 +452,9 @@
             <div class="mini-box"><span>最近入库</span><strong>SONE-404 引きこもりの爆乳先輩と地元で再会し、だらしないけどムチムチ助平な女体に</strong></div>
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:32740" target="_blank" rel="noopener noreferrer">MetaTube</a></div>
-          <details class="news-box">
+          <details class="news-box" open>
             <summary>🍑 JavBus 新番 / 最新作品</summary>
-            <ul class="news-list"><li><a href="https://www.javbus.com/OFES-046" target="_blank" rel="noopener noreferrer">OFES-046｜10年ぶりに帰省した実家に引きこもるアラサーニート姉がだらしなさ過ぎてシコい 鷲尾めい</a><span class="news-meta">2026-06-26 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-254" target="_blank" rel="noopener noreferrer">SNOS-254｜兄貴、ごめん！デリヘル呼んだらお義姉さんが… Lカップ爆乳があまりにも最高過ぎてご無沙汰ザコマ○コを激突きしまくって最高のメス嫁に開発しといたよw 鷲尾めい</a><span class="news-meta">2026-05-21 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-170" target="_blank" rel="noopener noreferrer">SNOS-170｜Lカップ爆乳でいつでもどこでも挟んでヌケる使い放題フリーおっぱい秘書 鷲尾めい</a><span class="news-meta">2026-04-23 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
+            <ul class="news-list"><li><a href="https://www.javbus.com/OFES-046" target="_blank" rel="noopener noreferrer">OFES-046｜10年ぶりに帰省した実家に引きこもるアラサーニート姉がだらしなさ過ぎてシコい 鷲尾めい</a> <a class="missav-btn" href="https://missav.ws/en/ofes-046" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-06-26 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-254" target="_blank" rel="noopener noreferrer">SNOS-254｜兄貴、ごめん！デリヘル呼んだらお義姉さんが… Lカップ爆乳があまりにも最高過ぎてご無沙汰ザコマ○コを激突きしまくって最高のメス嫁に開発しといたよw 鷲尾めい</a> <a class="missav-btn" href="https://missav.ws/en/snos-254" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-05-21 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-170" target="_blank" rel="noopener noreferrer">SNOS-170｜Lカップ爆乳でいつでもどこでも挟んでヌケる使い放題フリーおっぱい秘書 鷲尾めい</a> <a class="missav-btn" href="https://missav.ws/en/snos-170" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a><span class="news-meta">2026-04-23 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
         </div>
@@ -454,203 +466,203 @@
         <div class="panel"><h3>🍃 最近入库</h3><ul class="soft-list">
     <li class="soft-item">
       <div class="soft-item-date">2026-07-25</div>
-      <div class="soft-item-main"><span class="actor-chip">推川ゆうり</span><span class="soft-title">NGOD-319 100日後にねとられる妻 孕まされるまで、あと、○○日。人妻完堕ち物語 推川ゆうり</span><span class="code-chip">NGOD-319</span></div>
+      <div class="soft-item-main"><span class="actor-chip">推川ゆうり</span><span class="soft-title">NGOD-319 100日後にねとられる妻 孕まされるまで、あと、○○日。人妻完堕ち物語 推川ゆうり</span><span class="code-chip">NGOD-319</span> <a class="missav-mini-btn" href="https://missav.ws/en/ngod-319" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-06-16</div>
-      <div class="soft-item-main"><span class="actor-chip">猿田まこと</span><span class="soft-title">NHDTC-159</span><span class="code-chip">NHDTC-159</span></div>
+      <div class="soft-item-main"><span class="actor-chip">猿田まこと</span><span class="soft-title">NHDTC-159</span><span class="code-chip">NHDTC-159</span> <a class="missav-mini-btn" href="https://missav.ws/en/nhdtc-159" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-06-16</div>
-      <div class="soft-item-main"><span class="actor-chip">豆沢豆太郎</span><span class="soft-title">MFYD-063 「どっちの夫が絶倫でイカしたチ○ポか真剣勝負 （ガチンコ）...！！」 淫乱妻たちの超絶スワッピング＆大乱交SPECIAL！14射精！ 北野未奈 藤森里穂</span><span class="code-chip">MFYD-063</span></div>
+      <div class="soft-item-main"><span class="actor-chip">豆沢豆太郎</span><span class="soft-title">MFYD-063 「どっちの夫が絶倫でイカしたチ○ポか真剣勝負 （ガチンコ）...！！」 淫乱妻たちの超絶スワッピング＆大乱交SPECIAL！14射精！ 北野未奈 藤森里穂</span><span class="code-chip">MFYD-063</span> <a class="missav-mini-btn" href="https://missav.ws/en/mfyd-063" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-06-16</div>
-      <div class="soft-item-main"><span class="actor-chip">藤森里穂</span><span class="soft-title">MFYD-063 「どっちの夫が絶倫でイカしたチ○ポか真剣勝負 （ガチンコ）...！！」 淫乱妻たちの超絶スワッピング＆大乱交SPECIAL！14射精！ 北野未奈 藤森里穂</span><span class="code-chip">MFYD-063</span></div>
+      <div class="soft-item-main"><span class="actor-chip">藤森里穂</span><span class="soft-title">MFYD-063 「どっちの夫が絶倫でイカしたチ○ポか真剣勝負 （ガチンコ）...！！」 淫乱妻たちの超絶スワッピング＆大乱交SPECIAL！14射精！ 北野未奈 藤森里穂</span><span class="code-chip">MFYD-063</span> <a class="missav-mini-btn" href="https://missav.ws/en/mfyd-063" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-06-16</div>
-      <div class="soft-item-main"><span class="actor-chip">北野未奈</span><span class="soft-title">MFYD-063 「どっちの夫が絶倫でイカしたチ○ポか真剣勝負 （ガチンコ）...！！」 淫乱妻たちの超絶スワッピング＆大乱交SPECIAL！14射精！ 北野未奈 藤森里穂</span><span class="code-chip">MFYD-063</span></div>
+      <div class="soft-item-main"><span class="actor-chip">北野未奈</span><span class="soft-title">MFYD-063 「どっちの夫が絶倫でイカしたチ○ポか真剣勝負 （ガチンコ）...！！」 淫乱妻たちの超絶スワッピング＆大乱交SPECIAL！14射精！ 北野未奈 藤森里穂</span><span class="code-chip">MFYD-063</span> <a class="missav-mini-btn" href="https://missav.ws/en/mfyd-063" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-06-12</div>
-      <div class="soft-item-main"><span class="actor-chip">つばさ舞</span><span class="soft-title">FNS-205</span><span class="code-chip">FNS-205</span></div>
+      <div class="soft-item-main"><span class="actor-chip">つばさ舞</span><span class="soft-title">FNS-205</span><span class="code-chip">FNS-205</span> <a class="missav-mini-btn" href="https://missav.ws/en/fns-205" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-06-12</div>
-      <div class="soft-item-main"><span class="actor-chip">真栄田一門</span><span class="soft-title">FNS-205</span><span class="code-chip">FNS-205</span></div>
+      <div class="soft-item-main"><span class="actor-chip">真栄田一門</span><span class="soft-title">FNS-205</span><span class="code-chip">FNS-205</span> <a class="missav-mini-btn" href="https://missav.ws/en/fns-205" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-06-12</div>
-      <div class="soft-item-main"><span class="actor-chip">赤井彗星</span><span class="soft-title">MIDA-635</span><span class="code-chip">MIDA-635</span></div>
+      <div class="soft-item-main"><span class="actor-chip">赤井彗星</span><span class="soft-title">MIDA-635</span><span class="code-chip">MIDA-635</span> <a class="missav-mini-btn" href="https://missav.ws/en/mida-635" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-06-12</div>
-      <div class="soft-item-main"><span class="actor-chip">石原希望</span><span class="soft-title">MIDA-635</span><span class="code-chip">MIDA-635</span></div>
+      <div class="soft-item-main"><span class="actor-chip">石原希望</span><span class="soft-title">MIDA-635</span><span class="code-chip">MIDA-635</span> <a class="missav-mini-btn" href="https://missav.ws/en/mida-635" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-06-09</div>
-      <div class="soft-item-main"><span class="actor-chip">きとるね川口</span><span class="soft-title">MNGS-053 単身赴任から半年… 久しぶりの自宅で真っ先に目にしたのは僕の愛する妻が自宅で知らない男達とアヘアへキメセク乱交している姿だった… 美園和花</span><span class="code-chip">MNGS-053</span></div>
+      <div class="soft-item-main"><span class="actor-chip">きとるね川口</span><span class="soft-title">MNGS-053 単身赴任から半年… 久しぶりの自宅で真っ先に目にしたのは僕の愛する妻が自宅で知らない男達とアヘアへキメセク乱交している姿だった… 美園和花</span><span class="code-chip">MNGS-053</span> <a class="missav-mini-btn" href="https://missav.ws/en/mngs-053" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-06-09</div>
-      <div class="soft-item-main"><span class="actor-chip">美園和花</span><span class="soft-title">MNGS-053 単身赴任から半年… 久しぶりの自宅で真っ先に目にしたのは僕の愛する妻が自宅で知らない男達とアヘアへキメセク乱交している姿だった… 美園和花</span><span class="code-chip">MNGS-053</span></div>
+      <div class="soft-item-main"><span class="actor-chip">美園和花</span><span class="soft-title">MNGS-053 単身赴任から半年… 久しぶりの自宅で真っ先に目にしたのは僕の愛する妻が自宅で知らない男達とアヘアへキメセク乱交している姿だった… 美園和花</span><span class="code-chip">MNGS-053</span> <a class="missav-mini-btn" href="https://missav.ws/en/mngs-053" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-23</div>
-      <div class="soft-item-main"><span class="actor-chip">七海ティナ</span><span class="soft-title">JUR-754 「一瞬だけでイイので挿れさせて下さい！！」 30歳になっても童貞の義弟に同情して一生の願いを受け挿れたら、相性抜群過ぎて何度もおかわり中出しSEXを求めてしまった私。 七海ティナ</span><span class="code-chip">JUR-754</span></div>
+      <div class="soft-item-main"><span class="actor-chip">七海ティナ</span><span class="soft-title">JUR-754 「一瞬だけでイイので挿れさせて下さい！！」 30歳になっても童貞の義弟に同情して一生の願いを受け挿れたら、相性抜群過ぎて何度もおかわり中出しSEXを求めてしまった私。 七海ティナ</span><span class="code-chip">JUR-754</span> <a class="missav-mini-btn" href="https://missav.ws/en/jur-754" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-23</div>
-      <div class="soft-item-main"><span class="actor-chip">加州夏</span><span class="soft-title">JUR-754 「一瞬だけでイイので挿れさせて下さい！！」 30歳になっても童貞の義弟に同情して一生の願いを受け挿れたら、相性抜群過ぎて何度もおかわり中出しSEXを求めてしまった私。 七海ティナ</span><span class="code-chip">JUR-754</span></div>
+      <div class="soft-item-main"><span class="actor-chip">加州夏</span><span class="soft-title">JUR-754 「一瞬だけでイイので挿れさせて下さい！！」 30歳になっても童貞の義弟に同情して一生の願いを受け挿れたら、相性抜群過ぎて何度もおかわり中出しSEXを求めてしまった私。 七海ティナ</span><span class="code-chip">JUR-754</span> <a class="missav-mini-btn" href="https://missav.ws/en/jur-754" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-23</div>
-      <div class="soft-item-main"><span class="actor-chip">夢乃あいか</span><span class="soft-title">SNOS-238 性器共鳴 男と女のダブル媚薬トランス覚醒キメセク 夢乃あいか</span><span class="code-chip">SNOS-238</span></div>
+      <div class="soft-item-main"><span class="actor-chip">夢乃あいか</span><span class="soft-title">SNOS-238 性器共鳴 男と女のダブル媚薬トランス覚醒キメセク 夢乃あいか</span><span class="code-chip">SNOS-238</span> <a class="missav-mini-btn" href="https://missav.ws/en/snos-238" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-23</div>
-      <div class="soft-item-main"><span class="actor-chip">ちんぽす</span><span class="soft-title">SNOS-238 性器共鳴 男と女のダブル媚薬トランス覚醒キメセク 夢乃あいか</span><span class="code-chip">SNOS-238</span></div>
+      <div class="soft-item-main"><span class="actor-chip">ちんぽす</span><span class="soft-title">SNOS-238 性器共鳴 男と女のダブル媚薬トランス覚醒キメセク 夢乃あいか</span><span class="code-chip">SNOS-238</span> <a class="missav-mini-btn" href="https://missav.ws/en/snos-238" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-23</div>
-      <div class="soft-item-main"><span class="actor-chip">ドラゴン西川</span><span class="soft-title">MIDA-624 法事同窓会NTR ヤンチャな過去を持つ妻が6年ぶりに仲間の法事で地元に帰った 再会した地元のゲス友たちに酔わされて昔のヤリマンに戻った妻の寝取られ中出し映像 葵いぶき</span><span class="code-chip">MIDA-624</span></div>
+      <div class="soft-item-main"><span class="actor-chip">ドラゴン西川</span><span class="soft-title">MIDA-624 法事同窓会NTR ヤンチャな過去を持つ妻が6年ぶりに仲間の法事で地元に帰った 再会した地元のゲス友たちに酔わされて昔のヤリマンに戻った妻の寝取られ中出し映像 葵いぶき</span><span class="code-chip">MIDA-624</span> <a class="missav-mini-btn" href="https://missav.ws/en/mida-624" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-23</div>
-      <div class="soft-item-main"><span class="actor-chip">葵いぶき</span><span class="soft-title">MIDA-624 法事同窓会NTR ヤンチャな過去を持つ妻が6年ぶりに仲間の法事で地元に帰った 再会した地元のゲス友たちに酔わされて昔のヤリマンに戻った妻の寝取られ中出し映像 葵いぶき</span><span class="code-chip">MIDA-624</span></div>
+      <div class="soft-item-main"><span class="actor-chip">葵いぶき</span><span class="soft-title">MIDA-624 法事同窓会NTR ヤンチャな過去を持つ妻が6年ぶりに仲間の法事で地元に帰った 再会した地元のゲス友たちに酔わされて昔のヤリマンに戻った妻の寝取られ中出し映像 葵いぶき</span><span class="code-chip">MIDA-624</span> <a class="missav-mini-btn" href="https://missav.ws/en/mida-624" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-22</div>
-      <div class="soft-item-main"><span class="actor-chip">豆沢豆太郎</span><span class="soft-title">JUR-753 昔俺の事が好きだった地味な幼馴染が、色気漂う巨乳人妻に進化していたので、性欲が尽き果てるまで生ハメしまくった…。 彩月七緒</span><span class="code-chip">JUR-753</span></div>
+      <div class="soft-item-main"><span class="actor-chip">豆沢豆太郎</span><span class="soft-title">JUR-753 昔俺の事が好きだった地味な幼馴染が、色気漂う巨乳人妻に進化していたので、性欲が尽き果てるまで生ハメしまくった…。 彩月七緒</span><span class="code-chip">JUR-753</span> <a class="missav-mini-btn" href="https://missav.ws/en/jur-753" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-22</div>
-      <div class="soft-item-main"><span class="actor-chip">彩月七緒</span><span class="soft-title">JUR-753 昔俺の事が好きだった地味な幼馴染が、色気漂う巨乳人妻に進化していたので、性欲が尽き果てるまで生ハメしまくった…。 彩月七緒</span><span class="code-chip">JUR-753</span></div>
+      <div class="soft-item-main"><span class="actor-chip">彩月七緒</span><span class="soft-title">JUR-753 昔俺の事が好きだった地味な幼馴染が、色気漂う巨乳人妻に進化していたので、性欲が尽き果てるまで生ハメしまくった…。 彩月七緒</span><span class="code-chip">JUR-753</span> <a class="missav-mini-btn" href="https://missav.ws/en/jur-753" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-04-25</div>
-      <div class="soft-item-main"><span class="actor-chip">七海ティナ</span><span class="soft-title">JUR-707 愛する夫の為に、身代わり週末肉便器。 超絶倫極悪オヤジに、孕むまで何度も中出しされ続けて…。 七海ティナ</span><span class="code-chip">JUR-707</span></div>
+      <div class="soft-item-main"><span class="actor-chip">七海ティナ</span><span class="soft-title">JUR-707 愛する夫の為に、身代わり週末肉便器。 超絶倫極悪オヤジに、孕むまで何度も中出しされ続けて…。 七海ティナ</span><span class="code-chip">JUR-707</span> <a class="missav-mini-btn" href="https://missav.ws/en/jur-707" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     </ul></div>
         <div class="panel"><h3>🎞️ 最新发行</h3><ul class="soft-list">
     <li class="soft-item">
       <div class="soft-item-date">2026-06-18</div>
-      <div class="soft-item-main"><span class="actor-chip">つばさ舞</span><span class="soft-title">FNS-205</span><span class="code-chip">FNS-205</span></div>
+      <div class="soft-item-main"><span class="actor-chip">つばさ舞</span><span class="soft-title">FNS-205</span><span class="code-chip">FNS-205</span> <a class="missav-mini-btn" href="https://missav.ws/en/fns-205" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-06-18</div>
-      <div class="soft-item-main"><span class="actor-chip">真栄田一門</span><span class="soft-title">FNS-205</span><span class="code-chip">FNS-205</span></div>
+      <div class="soft-item-main"><span class="actor-chip">真栄田一門</span><span class="soft-title">FNS-205</span><span class="code-chip">FNS-205</span> <a class="missav-mini-btn" href="https://missav.ws/en/fns-205" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-21</div>
-      <div class="soft-item-main"><span class="actor-chip">七海ティナ</span><span class="soft-title">JUR-754 「一瞬だけでイイので挿れさせて下さい！！」 30歳になっても童貞の義弟に同情して一生の願いを受け挿れたら、相性抜群過ぎて何度もおかわり中出しSEXを求めてしまった私。 七海ティナ</span><span class="code-chip">JUR-754</span></div>
+      <div class="soft-item-main"><span class="actor-chip">七海ティナ</span><span class="soft-title">JUR-754 「一瞬だけでイイので挿れさせて下さい！！」 30歳になっても童貞の義弟に同情して一生の願いを受け挿れたら、相性抜群過ぎて何度もおかわり中出しSEXを求めてしまった私。 七海ティナ</span><span class="code-chip">JUR-754</span> <a class="missav-mini-btn" href="https://missav.ws/en/jur-754" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-21</div>
-      <div class="soft-item-main"><span class="actor-chip">加州夏</span><span class="soft-title">JUR-754 「一瞬だけでイイので挿れさせて下さい！！」 30歳になっても童貞の義弟に同情して一生の願いを受け挿れたら、相性抜群過ぎて何度もおかわり中出しSEXを求めてしまった私。 七海ティナ</span><span class="code-chip">JUR-754</span></div>
+      <div class="soft-item-main"><span class="actor-chip">加州夏</span><span class="soft-title">JUR-754 「一瞬だけでイイので挿れさせて下さい！！」 30歳になっても童貞の義弟に同情して一生の願いを受け挿れたら、相性抜群過ぎて何度もおかわり中出しSEXを求めてしまった私。 七海ティナ</span><span class="code-chip">JUR-754</span> <a class="missav-mini-btn" href="https://missav.ws/en/jur-754" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-21</div>
-      <div class="soft-item-main"><span class="actor-chip">夢乃あいか</span><span class="soft-title">SNOS-238 性器共鳴 男と女のダブル媚薬トランス覚醒キメセク 夢乃あいか</span><span class="code-chip">SNOS-238</span></div>
+      <div class="soft-item-main"><span class="actor-chip">夢乃あいか</span><span class="soft-title">SNOS-238 性器共鳴 男と女のダブル媚薬トランス覚醒キメセク 夢乃あいか</span><span class="code-chip">SNOS-238</span> <a class="missav-mini-btn" href="https://missav.ws/en/snos-238" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-21</div>
-      <div class="soft-item-main"><span class="actor-chip">ちんぽす</span><span class="soft-title">SNOS-238 性器共鳴 男と女のダブル媚薬トランス覚醒キメセク 夢乃あいか</span><span class="code-chip">SNOS-238</span></div>
+      <div class="soft-item-main"><span class="actor-chip">ちんぽす</span><span class="soft-title">SNOS-238 性器共鳴 男と女のダブル媚薬トランス覚醒キメセク 夢乃あいか</span><span class="code-chip">SNOS-238</span> <a class="missav-mini-btn" href="https://missav.ws/en/snos-238" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-14</div>
-      <div class="soft-item-main"><span class="actor-chip">赤井彗星</span><span class="soft-title">MIDA-635</span><span class="code-chip">MIDA-635</span></div>
+      <div class="soft-item-main"><span class="actor-chip">赤井彗星</span><span class="soft-title">MIDA-635</span><span class="code-chip">MIDA-635</span> <a class="missav-mini-btn" href="https://missav.ws/en/mida-635" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-14</div>
-      <div class="soft-item-main"><span class="actor-chip">石原希望</span><span class="soft-title">MIDA-635</span><span class="code-chip">MIDA-635</span></div>
+      <div class="soft-item-main"><span class="actor-chip">石原希望</span><span class="soft-title">MIDA-635</span><span class="code-chip">MIDA-635</span> <a class="missav-mini-btn" href="https://missav.ws/en/mida-635" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-14</div>
-      <div class="soft-item-main"><span class="actor-chip">きとるね川口</span><span class="soft-title">MNGS-053 単身赴任から半年… 久しぶりの自宅で真っ先に目にしたのは僕の愛する妻が自宅で知らない男達とアヘアへキメセク乱交している姿だった… 美園和花</span><span class="code-chip">MNGS-053</span></div>
+      <div class="soft-item-main"><span class="actor-chip">きとるね川口</span><span class="soft-title">MNGS-053 単身赴任から半年… 久しぶりの自宅で真っ先に目にしたのは僕の愛する妻が自宅で知らない男達とアヘアへキメセク乱交している姿だった… 美園和花</span><span class="code-chip">MNGS-053</span> <a class="missav-mini-btn" href="https://missav.ws/en/mngs-053" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-14</div>
-      <div class="soft-item-main"><span class="actor-chip">美園和花</span><span class="soft-title">MNGS-053 単身赴任から半年… 久しぶりの自宅で真っ先に目にしたのは僕の愛する妻が自宅で知らない男達とアヘアへキメセク乱交している姿だった… 美園和花</span><span class="code-chip">MNGS-053</span></div>
+      <div class="soft-item-main"><span class="actor-chip">美園和花</span><span class="soft-title">MNGS-053 単身赴任から半年… 久しぶりの自宅で真っ先に目にしたのは僕の愛する妻が自宅で知らない男達とアヘアへキメセク乱交している姿だった… 美園和花</span><span class="code-chip">MNGS-053</span> <a class="missav-mini-btn" href="https://missav.ws/en/mngs-053" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-07</div>
-      <div class="soft-item-main"><span class="actor-chip">豆沢豆太郎</span><span class="soft-title">JUR-753 昔俺の事が好きだった地味な幼馴染が、色気漂う巨乳人妻に進化していたので、性欲が尽き果てるまで生ハメしまくった…。 彩月七緒</span><span class="code-chip">JUR-753</span></div>
+      <div class="soft-item-main"><span class="actor-chip">豆沢豆太郎</span><span class="soft-title">JUR-753 昔俺の事が好きだった地味な幼馴染が、色気漂う巨乳人妻に進化していたので、性欲が尽き果てるまで生ハメしまくった…。 彩月七緒</span><span class="code-chip">JUR-753</span> <a class="missav-mini-btn" href="https://missav.ws/en/jur-753" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-05-07</div>
-      <div class="soft-item-main"><span class="actor-chip">彩月七緒</span><span class="soft-title">JUR-753 昔俺の事が好きだった地味な幼馴染が、色気漂う巨乳人妻に進化していたので、性欲が尽き果てるまで生ハメしまくった…。 彩月七緒</span><span class="code-chip">JUR-753</span></div>
+      <div class="soft-item-main"><span class="actor-chip">彩月七緒</span><span class="soft-title">JUR-753 昔俺の事が好きだった地味な幼馴染が、色気漂う巨乳人妻に進化していたので、性欲が尽き果てるまで生ハメしまくった…。 彩月七緒</span><span class="code-chip">JUR-753</span> <a class="missav-mini-btn" href="https://missav.ws/en/jur-753" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-04-30</div>
-      <div class="soft-item-main"><span class="actor-chip">ドラゴン西川</span><span class="soft-title">MIDA-624 法事同窓会NTR ヤンチャな過去を持つ妻が6年ぶりに仲間の法事で地元に帰った 再会した地元のゲス友たちに酔わされて昔のヤリマンに戻った妻の寝取られ中出し映像 葵いぶき</span><span class="code-chip">MIDA-624</span></div>
+      <div class="soft-item-main"><span class="actor-chip">ドラゴン西川</span><span class="soft-title">MIDA-624 法事同窓会NTR ヤンチャな過去を持つ妻が6年ぶりに仲間の法事で地元に帰った 再会した地元のゲス友たちに酔わされて昔のヤリマンに戻った妻の寝取られ中出し映像 葵いぶき</span><span class="code-chip">MIDA-624</span> <a class="missav-mini-btn" href="https://missav.ws/en/mida-624" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-04-30</div>
-      <div class="soft-item-main"><span class="actor-chip">葵いぶき</span><span class="soft-title">MIDA-624 法事同窓会NTR ヤンチャな過去を持つ妻が6年ぶりに仲間の法事で地元に帰った 再会した地元のゲス友たちに酔わされて昔のヤリマンに戻った妻の寝取られ中出し映像 葵いぶき</span><span class="code-chip">MIDA-624</span></div>
+      <div class="soft-item-main"><span class="actor-chip">葵いぶき</span><span class="soft-title">MIDA-624 法事同窓会NTR ヤンチャな過去を持つ妻が6年ぶりに仲間の法事で地元に帰った 再会した地元のゲス友たちに酔わされて昔のヤリマンに戻った妻の寝取られ中出し映像 葵いぶき</span><span class="code-chip">MIDA-624</span> <a class="missav-mini-btn" href="https://missav.ws/en/mida-624" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-04-28</div>
-      <div class="soft-item-main"><span class="actor-chip">七海ティナ</span><span class="soft-title">JUR-707 愛する夫の為に、身代わり週末肉便器。 超絶倫極悪オヤジに、孕むまで何度も中出しされ続けて…。 七海ティナ</span><span class="code-chip">JUR-707</span></div>
+      <div class="soft-item-main"><span class="actor-chip">七海ティナ</span><span class="soft-title">JUR-707 愛する夫の為に、身代わり週末肉便器。 超絶倫極悪オヤジに、孕むまで何度も中出しされ続けて…。 七海ティナ</span><span class="code-chip">JUR-707</span> <a class="missav-mini-btn" href="https://missav.ws/en/jur-707" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-04-28</div>
-      <div class="soft-item-main"><span class="actor-chip">春花幸男</span><span class="soft-title">JUR-707 愛する夫の為に、身代わり週末肉便器。 超絶倫極悪オヤジに、孕むまで何度も中出しされ続けて…。 七海ティナ</span><span class="code-chip">JUR-707</span></div>
+      <div class="soft-item-main"><span class="actor-chip">春花幸男</span><span class="soft-title">JUR-707 愛する夫の為に、身代わり週末肉便器。 超絶倫極悪オヤジに、孕むまで何度も中出しされ続けて…。 七海ティナ</span><span class="code-chip">JUR-707</span> <a class="missav-mini-btn" href="https://missav.ws/en/jur-707" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-04-23</div>
-      <div class="soft-item-main"><span class="actor-chip">太宰珍歩</span><span class="soft-title">START-483 OLやめて実家の銭湯を継いだら昔はひ弱なもやしっ子だった幼なじみと18年ぶりに再会 膣形フィットマラして互いに欲情がとまらず仕事のスキマ時間に汗だくSEX 小湊よつ葉</span><span class="code-chip">START-483</span></div>
+      <div class="soft-item-main"><span class="actor-chip">太宰珍歩</span><span class="soft-title">START-483 OLやめて実家の銭湯を継いだら昔はひ弱なもやしっ子だった幼なじみと18年ぶりに再会 膣形フィットマラして互いに欲情がとまらず仕事のスキマ時間に汗だくSEX 小湊よつ葉</span><span class="code-chip">START-483</span> <a class="missav-mini-btn" href="https://missav.ws/en/start-483" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-04-23</div>
-      <div class="soft-item-main"><span class="actor-chip">小湊よつ葉</span><span class="soft-title">START-483 OLやめて実家の銭湯を継いだら昔はひ弱なもやしっ子だった幼なじみと18年ぶりに再会 膣形フィットマラして互いに欲情がとまらず仕事のスキマ時間に汗だくSEX 小湊よつ葉</span><span class="code-chip">START-483</span></div>
+      <div class="soft-item-main"><span class="actor-chip">小湊よつ葉</span><span class="soft-title">START-483 OLやめて実家の銭湯を継いだら昔はひ弱なもやしっ子だった幼なじみと18年ぶりに再会 膣形フィットマラして互いに欲情がとまらず仕事のスキマ時間に汗だくSEX 小湊よつ葉</span><span class="code-chip">START-483</span> <a class="missav-mini-btn" href="https://missav.ws/en/start-483" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-04-14</div>
-      <div class="soft-item-main"><span class="actor-chip">青空ひかり</span><span class="soft-title">START-548 皆から好かれる院内のムードメーカー看護師A（26）職場で隠れモテしている既婚ドクターYが調合した謎のビタミン剤を盛られキメセク漬け ガンギマリよだれ垂れ流しグラインド騎乗位中毒者に 青空ひかり</span><span class="code-chip">START-548</span></div>
+      <div class="soft-item-main"><span class="actor-chip">青空ひかり</span><span class="soft-title">START-548 皆から好かれる院内のムードメーカー看護師A（26）職場で隠れモテしている既婚ドクターYが調合した謎のビタミン剤を盛られキメセク漬け ガンギマリよだれ垂れ流しグラインド騎乗位中毒者に 青空ひかり</span><span class="code-chip">START-548</span> <a class="missav-mini-btn" href="https://missav.ws/en/start-548" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     
     <li class="soft-item">
       <div class="soft-item-date">2026-04-09</div>
-      <div class="soft-item-main"><span class="actor-chip">神木麗</span><span class="soft-title">START-498 【数量限定】【特典版】ハプバーでSEXをしたのは親友の旦那。もっと責めたい女と責められたい女…正反対の人妻二人が快楽堕ちして夫婦交換スワッピング4Pする仲になるまで。 青空ひかり 神木麗 青空ひかりさんのパンティと写真セット</span><span class="code-chip">START-498</span></div>
+      <div class="soft-item-main"><span class="actor-chip">神木麗</span><span class="soft-title">START-498 【数量限定】【特典版】ハプバーでSEXをしたのは親友の旦那。もっと責めたい女と責められたい女…正反対の人妻二人が快楽堕ちして夫婦交換スワッピング4Pする仲になるまで。 青空ひかり 神木麗 青空ひかりさんのパンティと写真セット</span><span class="code-chip">START-498</span> <a class="missav-mini-btn" href="https://missav.ws/en/start-498" target="_blank" rel="noopener noreferrer">🍑 MissAV</a></div>
     </li>
     </ul></div>
       </div>
@@ -817,6 +829,7 @@
           <thead><tr><th>演员</th><th>馆藏数</th><th>最新发行</th><th>最近入库</th><th>外部档案</th></tr></thead>
           <tbody>
         <tr data-name="きとるね川口">
+          <td style="width: 50px;"><div class="table-avatar-fallback">き</div></td>
           <td><strong>きとるね川口</strong></td>
           <td>30</td>
           <td>2026-05-14</td>
@@ -825,6 +838,7 @@
         </tr>
         
         <tr data-name="豆沢豆太郎">
+          <td style="width: 50px;"><div class="table-avatar-fallback">豆</div></td>
           <td><strong>豆沢豆太郎</strong></td>
           <td>16</td>
           <td>2026-05-07</td>
@@ -833,6 +847,7 @@
         </tr>
         
         <tr data-name="愛弓りょう">
+          <td style="width: 50px;"><div class="table-avatar-fallback">愛</div></td>
           <td><strong>愛弓りょう</strong></td>
           <td>16</td>
           <td>2025-12-18</td>
@@ -841,6 +856,7 @@
         </tr>
         
         <tr data-name="肉尊">
+          <td style="width: 50px;"><div class="table-avatar-fallback">肉</div></td>
           <td><strong>肉尊</strong></td>
           <td>12</td>
           <td>2025-11-27</td>
@@ -849,6 +865,7 @@
         </tr>
         
         <tr data-name="夢乃あいか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">夢</div></td>
           <td><strong>夢乃あいか</strong></td>
           <td>11</td>
           <td>2026-05-21</td>
@@ -857,6 +874,7 @@
         </tr>
         
         <tr data-name="庵ひめか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">庵</div></td>
           <td><strong>庵ひめか</strong></td>
           <td>11</td>
           <td>2025-06-06</td>
@@ -865,6 +883,7 @@
         </tr>
         
         <tr data-name="弥生みづき">
+          <td style="width: 50px;"><div class="table-avatar-fallback">弥</div></td>
           <td><strong>弥生みづき</strong></td>
           <td>11</td>
           <td>2025-04-28</td>
@@ -873,6 +892,7 @@
         </tr>
         
         <tr data-name="奥田咲">
+          <td style="width: 50px;"><div class="table-avatar-fallback">奥</div></td>
           <td><strong>奥田咲</strong></td>
           <td>10</td>
           <td>2026-01-08</td>
@@ -881,6 +901,7 @@
         </tr>
         
         <tr data-name="木村浩之">
+          <td style="width: 50px;"><div class="table-avatar-fallback">木</div></td>
           <td><strong>木村浩之</strong></td>
           <td>10</td>
           <td>2025-08-21</td>
@@ -889,6 +910,7 @@
         </tr>
         
         <tr data-name="佐山愛">
+          <td style="width: 50px;"><div class="table-avatar-fallback">佐</div></td>
           <td><strong>佐山愛</strong></td>
           <td>10</td>
           <td>2025-07-11</td>
@@ -897,6 +919,7 @@
         </tr>
         
         <tr data-name="松本菜奈実">
+          <td style="width: 50px;"><div class="table-avatar-fallback">松</div></td>
           <td><strong>松本菜奈実</strong></td>
           <td>10</td>
           <td>2025-03-14</td>
@@ -905,6 +928,7 @@
         </tr>
         
         <tr data-name="鷲尾めい">
+          <td style="width: 50px;"><div class="table-avatar-fallback">鷲</div></td>
           <td><strong>鷲尾めい</strong></td>
           <td>10</td>
           <td>2024-10-22</td>
@@ -913,6 +937,7 @@
         </tr>
         
         <tr data-name="波多野結衣">
+          <td style="width: 50px;"><div class="table-avatar-fallback">波</div></td>
           <td><strong>波多野結衣</strong></td>
           <td>9</td>
           <td>2026-02-13</td>
@@ -921,6 +946,7 @@
         </tr>
         
         <tr data-name="take-d">
+          <td style="width: 50px;"><div class="table-avatar-fallback">T</div></td>
           <td><strong>TAKE-D</strong></td>
           <td>9</td>
           <td>2025-11-20</td>
@@ -929,6 +955,7 @@
         </tr>
         
         <tr data-name="イナバール">
+          <td style="width: 50px;"><div class="table-avatar-fallback">イ</div></td>
           <td><strong>イナバール</strong></td>
           <td>9</td>
           <td>2025-09-11</td>
@@ -937,6 +964,7 @@
         </tr>
         
         <tr data-name="一乃あおい">
+          <td style="width: 50px;"><div class="table-avatar-fallback">一</div></td>
           <td><strong>一乃あおい</strong></td>
           <td>9</td>
           <td>2025-06-06</td>
@@ -945,6 +973,7 @@
         </tr>
         
         <tr data-name="七海ティナ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">七</div></td>
           <td><strong>七海ティナ</strong></td>
           <td>8</td>
           <td>2026-05-21</td>
@@ -953,6 +982,7 @@
         </tr>
         
         <tr data-name="小宵こなん">
+          <td style="width: 50px;"><div class="table-avatar-fallback">小</div></td>
           <td><strong>小宵こなん</strong></td>
           <td>8</td>
           <td>2024-05-28</td>
@@ -961,6 +991,7 @@
         </tr>
         
         <tr data-name="水卜さくら">
+          <td style="width: 50px;"><div class="table-avatar-fallback">水</div></td>
           <td><strong>水卜さくら</strong></td>
           <td>8</td>
           <td>2025-05-16</td>
@@ -969,6 +1000,7 @@
         </tr>
         
         <tr data-name="美乃すずめ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">美</div></td>
           <td><strong>美乃すずめ</strong></td>
           <td>8</td>
           <td>2025-12-15</td>
@@ -977,6 +1009,7 @@
         </tr>
         
         <tr data-name="三島六三郎">
+          <td style="width: 50px;"><div class="table-avatar-fallback">三</div></td>
           <td><strong>三島六三郎</strong></td>
           <td>8</td>
           <td>2025-01-24</td>
@@ -985,6 +1018,7 @@
         </tr>
         
         <tr data-name="美園和花">
+          <td style="width: 50px;"><div class="table-avatar-fallback">美</div></td>
           <td><strong>美園和花</strong></td>
           <td>7</td>
           <td>2026-05-14</td>
@@ -993,6 +1027,7 @@
         </tr>
         
         <tr data-name="トレンディ山口">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ト</div></td>
           <td><strong>トレンディ山口</strong></td>
           <td>7</td>
           <td>2026-01-15</td>
@@ -1001,6 +1036,7 @@
         </tr>
         
         <tr data-name="姫咲はな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">姫</div></td>
           <td><strong>姫咲はな</strong></td>
           <td>7</td>
           <td>2025-07-25</td>
@@ -1009,6 +1045,7 @@
         </tr>
         
         <tr data-name="有岡みう">
+          <td style="width: 50px;"><div class="table-avatar-fallback">有</div></td>
           <td><strong>有岡みう</strong></td>
           <td>7</td>
           <td>2025-04-04</td>
@@ -1017,6 +1054,7 @@
         </tr>
         
         <tr data-name="朝霧浄">
+          <td style="width: 50px;"><div class="table-avatar-fallback">朝</div></td>
           <td><strong>朝霧浄</strong></td>
           <td>7</td>
           <td>2025-01-24</td>
@@ -1025,6 +1063,7 @@
         </tr>
         
         <tr data-name="julia">
+          <td style="width: 50px;"><div class="table-avatar-fallback">J</div></td>
           <td><strong>JULIA</strong></td>
           <td>6</td>
           <td>2026-03-03</td>
@@ -1033,6 +1072,7 @@
         </tr>
         
         <tr data-name="神木麗">
+          <td style="width: 50px;"><div class="table-avatar-fallback">神</div></td>
           <td><strong>神木麗</strong></td>
           <td>6</td>
           <td>2026-04-09</td>
@@ -1041,6 +1081,7 @@
         </tr>
         
         <tr data-name="前田文豪">
+          <td style="width: 50px;"><div class="table-avatar-fallback">前</div></td>
           <td><strong>前田文豪</strong></td>
           <td>6</td>
           <td>2025-03-18</td>
@@ -1049,6 +1090,7 @@
         </tr>
         
         <tr data-name="凪ひかる">
+          <td style="width: 50px;"><div class="table-avatar-fallback">凪</div></td>
           <td><strong>凪ひかる</strong></td>
           <td>6</td>
           <td>2024-07-09</td>
@@ -1057,6 +1099,7 @@
         </tr>
         
         <tr data-name="キョウセイ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">キ</div></td>
           <td><strong>キョウセイ</strong></td>
           <td>6</td>
           <td>2024-08-16</td>
@@ -1065,6 +1108,7 @@
         </tr>
         
         <tr data-name="ながえ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">な</div></td>
           <td><strong>ながえ</strong></td>
           <td>6</td>
           <td>2025-12-18</td>
@@ -1073,6 +1117,7 @@
         </tr>
         
         <tr data-name="富丈太郎">
+          <td style="width: 50px;"><div class="table-avatar-fallback">富</div></td>
           <td><strong>富丈太郎</strong></td>
           <td>6</td>
           <td>2024-08-24</td>
@@ -1081,6 +1126,7 @@
         </tr>
         
         <tr data-name="清宮仁愛">
+          <td style="width: 50px;"><div class="table-avatar-fallback">清</div></td>
           <td><strong>清宮仁愛</strong></td>
           <td>6</td>
           <td>2025-04-11</td>
@@ -1089,6 +1135,7 @@
         </tr>
         
         <tr data-name="辻井ほのか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">辻</div></td>
           <td><strong>辻井ほのか</strong></td>
           <td>6</td>
           <td>2024-12-13</td>
@@ -1097,6 +1144,7 @@
         </tr>
         
         <tr data-name="ドラゴン西川">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ド</div></td>
           <td><strong>ドラゴン西川</strong></td>
           <td>5</td>
           <td>2026-04-30</td>
@@ -1105,6 +1153,7 @@
         </tr>
         
         <tr data-name="u吉">
+          <td style="width: 50px;"><div class="table-avatar-fallback">U</div></td>
           <td><strong>U吉</strong></td>
           <td>5</td>
           <td>2025-04-18</td>
@@ -1113,6 +1162,7 @@
         </tr>
         
         <tr data-name="五右衛門">
+          <td style="width: 50px;"><div class="table-avatar-fallback">五</div></td>
           <td><strong>五右衛門</strong></td>
           <td>5</td>
           <td>2025-07-04</td>
@@ -1121,6 +1171,7 @@
         </tr>
         
         <tr data-name="桃園怜奈">
+          <td style="width: 50px;"><div class="table-avatar-fallback">桃</div></td>
           <td><strong>桃園怜奈</strong></td>
           <td>5</td>
           <td>2025-07-18</td>
@@ -1129,6 +1180,7 @@
         </tr>
         
         <tr data-name="七瀬アリス">
+          <td style="width: 50px;"><div class="table-avatar-fallback">七</div></td>
           <td><strong>七瀬アリス</strong></td>
           <td>5</td>
           <td>2025-07-25</td>
@@ -1137,6 +1189,7 @@
         </tr>
         
         <tr data-name="苺原">
+          <td style="width: 50px;"><div class="table-avatar-fallback">苺</div></td>
           <td><strong>苺原</strong></td>
           <td>5</td>
           <td>2025-01-17</td>
@@ -1145,6 +1198,7 @@
         </tr>
         
         <tr data-name="浜崎真緒">
+          <td style="width: 50px;"><div class="table-avatar-fallback">浜</div></td>
           <td><strong>浜崎真緒</strong></td>
           <td>5</td>
           <td>2023-08-31</td>
@@ -1153,6 +1207,7 @@
         </tr>
         
         <tr data-name="本田岬">
+          <td style="width: 50px;"><div class="table-avatar-fallback">本</div></td>
           <td><strong>本田岬</strong></td>
           <td>5</td>
           <td>2019-05-01</td>
@@ -1161,6 +1216,7 @@
         </tr>
         
         <tr data-name="小山雅継">
+          <td style="width: 50px;"><div class="table-avatar-fallback">小</div></td>
           <td><strong>小山雅継</strong></td>
           <td>5</td>
           <td>2024-07-19</td>
@@ -1169,6 +1225,7 @@
         </tr>
         
         <tr data-name="新山かえで">
+          <td style="width: 50px;"><div class="table-avatar-fallback">新</div></td>
           <td><strong>新山かえで</strong></td>
           <td>5</td>
           <td>2015-01-28</td>
@@ -1177,6 +1234,7 @@
         </tr>
         
         <tr data-name="太宰珍歩">
+          <td style="width: 50px;"><div class="table-avatar-fallback">太</div></td>
           <td><strong>太宰珍歩</strong></td>
           <td>4</td>
           <td>2026-04-23</td>
@@ -1185,6 +1243,7 @@
         </tr>
         
         <tr data-name="真咲南朋">
+          <td style="width: 50px;"><div class="table-avatar-fallback">真</div></td>
           <td><strong>真咲南朋</strong></td>
           <td>4</td>
           <td>2026-01-29</td>
@@ -1193,6 +1252,7 @@
         </tr>
         
         <tr data-name="武藤あやか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">武</div></td>
           <td><strong>武藤あやか</strong></td>
           <td>4</td>
           <td>2025-06-27</td>
@@ -1201,6 +1261,7 @@
         </tr>
         
         <tr data-name="篠田ゆう">
+          <td style="width: 50px;"><div class="table-avatar-fallback">篠</div></td>
           <td><strong>篠田ゆう</strong></td>
           <td>4</td>
           <td>2023-08-22</td>
@@ -1209,6 +1270,7 @@
         </tr>
         
         <tr data-name="紋℃">
+          <td style="width: 50px;"><div class="table-avatar-fallback">紋</div></td>
           <td><strong>紋℃</strong></td>
           <td>4</td>
           <td>2024-04-05</td>
@@ -1217,6 +1279,7 @@
         </tr>
         
         <tr data-name="小日向みゆう（清原みゆう）">
+          <td style="width: 50px;"><div class="table-avatar-fallback">小</div></td>
           <td><strong>小日向みゆう（清原みゆう）</strong></td>
           <td>4</td>
           <td>2025-12-04</td>
@@ -1225,6 +1288,7 @@
         </tr>
         
         <tr data-name="篠原いよ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">篠</div></td>
           <td><strong>篠原いよ</strong></td>
           <td>4</td>
           <td>2025-12-18</td>
@@ -1233,6 +1297,7 @@
         </tr>
         
         <tr data-name="ひむろっく">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ひ</div></td>
           <td><strong>ひむろっく</strong></td>
           <td>4</td>
           <td>2025-08-02</td>
@@ -1241,6 +1306,7 @@
         </tr>
         
         <tr data-name="葵百合香">
+          <td style="width: 50px;"><div class="table-avatar-fallback">葵</div></td>
           <td><strong>葵百合香</strong></td>
           <td>4</td>
           <td>2025-01-24</td>
@@ -1249,6 +1315,7 @@
         </tr>
         
         <tr data-name="百田光希">
+          <td style="width: 50px;"><div class="table-avatar-fallback">百</div></td>
           <td><strong>百田光希</strong></td>
           <td>4</td>
           <td>2025-06-27</td>
@@ -1257,6 +1324,7 @@
         </tr>
         
         <tr data-name="雨宮ひびき">
+          <td style="width: 50px;"><div class="table-avatar-fallback">雨</div></td>
           <td><strong>雨宮ひびき</strong></td>
           <td>4</td>
           <td>2025-07-25</td>
@@ -1265,6 +1333,7 @@
         </tr>
         
         <tr data-name="椿りか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">椿</div></td>
           <td><strong>椿りか</strong></td>
           <td>4</td>
           <td>2025-03-28</td>
@@ -1273,6 +1342,7 @@
         </tr>
         
         <tr data-name="天馬ゆい">
+          <td style="width: 50px;"><div class="table-avatar-fallback">天</div></td>
           <td><strong>天馬ゆい</strong></td>
           <td>4</td>
           <td>2025-02-28</td>
@@ -1281,6 +1351,7 @@
         </tr>
         
         <tr data-name="田中ねね">
+          <td style="width: 50px;"><div class="table-avatar-fallback">田</div></td>
           <td><strong>田中ねね</strong></td>
           <td>4</td>
           <td>2023-12-01</td>
@@ -1289,6 +1360,7 @@
         </tr>
         
         <tr data-name="白峰ミウ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">白</div></td>
           <td><strong>白峰ミウ</strong></td>
           <td>4</td>
           <td>2024-10-15</td>
@@ -1297,6 +1369,7 @@
         </tr>
         
         <tr data-name="ザック荒井">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ザ</div></td>
           <td><strong>ザック荒井</strong></td>
           <td>4</td>
           <td>2024-02-09</td>
@@ -1305,6 +1378,7 @@
         </tr>
         
         <tr data-name="瀬名ひかり">
+          <td style="width: 50px;"><div class="table-avatar-fallback">瀬</div></td>
           <td><strong>瀬名ひかり</strong></td>
           <td>4</td>
           <td>2023-01-20</td>
@@ -1313,6 +1387,7 @@
         </tr>
         
         <tr data-name="澁谷果歩">
+          <td style="width: 50px;"><div class="table-avatar-fallback">澁</div></td>
           <td><strong>澁谷果歩</strong></td>
           <td>4</td>
           <td>2018-08-13</td>
@@ -1321,6 +1396,7 @@
         </tr>
         
         <tr data-name="吉川あいみ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">吉</div></td>
           <td><strong>吉川あいみ</strong></td>
           <td>4</td>
           <td>2018-10-25</td>
@@ -1329,6 +1405,7 @@
         </tr>
         
         <tr data-name="君島みお">
+          <td style="width: 50px;"><div class="table-avatar-fallback">君</div></td>
           <td><strong>君島みお</strong></td>
           <td>4</td>
           <td>2023-03-31</td>
@@ -1337,6 +1414,7 @@
         </tr>
         
         <tr data-name="那須之浩">
+          <td style="width: 50px;"><div class="table-avatar-fallback">那</div></td>
           <td><strong>那須之浩</strong></td>
           <td>4</td>
           <td>2022-09-08</td>
@@ -1345,6 +1423,7 @@
         </tr>
         
         <tr data-name="推川ゆうり">
+          <td style="width: 50px;"><div class="table-avatar-fallback">推</div></td>
           <td><strong>推川ゆうり</strong></td>
           <td>3</td>
           <td>2026-02-05</td>
@@ -1353,6 +1432,7 @@
         </tr>
         
         <tr data-name="赤井彗星">
+          <td style="width: 50px;"><div class="table-avatar-fallback">赤</div></td>
           <td><strong>赤井彗星</strong></td>
           <td>3</td>
           <td>2026-05-14</td>
@@ -1361,6 +1441,7 @@
         </tr>
         
         <tr data-name="つばさ舞">
+          <td style="width: 50px;"><div class="table-avatar-fallback">つ</div></td>
           <td><strong>つばさ舞</strong></td>
           <td>3</td>
           <td>2026-06-18</td>
@@ -1369,6 +1450,7 @@
         </tr>
         
         <tr data-name="角奈保">
+          <td style="width: 50px;"><div class="table-avatar-fallback">角</div></td>
           <td><strong>角奈保</strong></td>
           <td>3</td>
           <td>2026-02-19</td>
@@ -1377,6 +1459,7 @@
         </tr>
         
         <tr data-name="安達夕莉">
+          <td style="width: 50px;"><div class="table-avatar-fallback">安</div></td>
           <td><strong>安達夕莉</strong></td>
           <td>3</td>
           <td>2024-08-23</td>
@@ -1385,6 +1468,7 @@
         </tr>
         
         <tr data-name="うんぱい">
+          <td style="width: 50px;"><div class="table-avatar-fallback">う</div></td>
           <td><strong>うんぱい</strong></td>
           <td>3</td>
           <td>2026-01-15</td>
@@ -1393,6 +1477,7 @@
         </tr>
         
         <tr data-name="設楽ゆうひ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">設</div></td>
           <td><strong>設楽ゆうひ</strong></td>
           <td>3</td>
           <td>2025-01-02</td>
@@ -1401,6 +1486,7 @@
         </tr>
         
         <tr data-name="桐谷まつり">
+          <td style="width: 50px;"><div class="table-avatar-fallback">桐</div></td>
           <td><strong>桐谷まつり</strong></td>
           <td>3</td>
           <td>2023-07-28</td>
@@ -1409,6 +1495,7 @@
         </tr>
         
         <tr data-name="逢見リカ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">逢</div></td>
           <td><strong>逢見リカ</strong></td>
           <td>3</td>
           <td>2025-07-25</td>
@@ -1417,6 +1504,7 @@
         </tr>
         
         <tr data-name="小梅えな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">小</div></td>
           <td><strong>小梅えな</strong></td>
           <td>3</td>
           <td>2025-07-25</td>
@@ -1425,6 +1513,7 @@
         </tr>
         
         <tr data-name="宮本留衣">
+          <td style="width: 50px;"><div class="table-avatar-fallback">宮</div></td>
           <td><strong>宮本留衣</strong></td>
           <td>3</td>
           <td>2025-07-25</td>
@@ -1433,6 +1522,7 @@
         </tr>
         
         <tr data-name="桜空もも">
+          <td style="width: 50px;"><div class="table-avatar-fallback">桜</div></td>
           <td><strong>桜空もも</strong></td>
           <td>3</td>
           <td>2024-06-11</td>
@@ -1441,6 +1531,7 @@
         </tr>
         
         <tr data-name="山手梨愛">
+          <td style="width: 50px;"><div class="table-avatar-fallback">山</div></td>
           <td><strong>山手梨愛</strong></td>
           <td>3</td>
           <td>2023-07-21</td>
@@ -1449,6 +1540,7 @@
         </tr>
         
         <tr data-name="伊藤舞雪">
+          <td style="width: 50px;"><div class="table-avatar-fallback">伊</div></td>
           <td><strong>伊藤舞雪</strong></td>
           <td>3</td>
           <td>2024-11-01</td>
@@ -1457,6 +1549,7 @@
         </tr>
         
         <tr data-name="zampa">
+          <td style="width: 50px;"><div class="table-avatar-fallback">Z</div></td>
           <td><strong>ZAMPA</strong></td>
           <td>3</td>
           <td>2024-05-31</td>
@@ -1465,6 +1558,7 @@
         </tr>
         
         <tr data-name="flagman">
+          <td style="width: 50px;"><div class="table-avatar-fallback">F</div></td>
           <td><strong>FLAGMAN</strong></td>
           <td>3</td>
           <td>2024-11-14</td>
@@ -1473,6 +1567,7 @@
         </tr>
         
         <tr data-name="橘メアリー">
+          <td style="width: 50px;"><div class="table-avatar-fallback">橘</div></td>
           <td><strong>橘メアリー</strong></td>
           <td>3</td>
           <td>2025-01-24</td>
@@ -1481,6 +1576,7 @@
         </tr>
         
         <tr data-name="めぐり（藤浦めぐ）">
+          <td style="width: 50px;"><div class="table-avatar-fallback">め</div></td>
           <td><strong>めぐり（藤浦めぐ）</strong></td>
           <td>3</td>
           <td>2025-01-24</td>
@@ -1489,6 +1585,7 @@
         </tr>
         
         <tr data-name="百永さりな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">百</div></td>
           <td><strong>百永さりな</strong></td>
           <td>3</td>
           <td>2024-09-24</td>
@@ -1497,6 +1594,7 @@
         </tr>
         
         <tr data-name="嵐山みちる">
+          <td style="width: 50px;"><div class="table-avatar-fallback">嵐</div></td>
           <td><strong>嵐山みちる</strong></td>
           <td>3</td>
           <td>2024-04-12</td>
@@ -1505,6 +1603,7 @@
         </tr>
         
         <tr data-name="麻美ゆま">
+          <td style="width: 50px;"><div class="table-avatar-fallback">麻</div></td>
           <td><strong>麻美ゆま</strong></td>
           <td>3</td>
           <td>2011-08-26</td>
@@ -1513,6 +1612,7 @@
         </tr>
         
         <tr data-name="川村晴">
+          <td style="width: 50px;"><div class="table-avatar-fallback">川</div></td>
           <td><strong>川村晴</strong></td>
           <td>3</td>
           <td>2021-02-06</td>
@@ -1521,6 +1621,7 @@
         </tr>
         
         <tr data-name="水野朝陽">
+          <td style="width: 50px;"><div class="table-avatar-fallback">水</div></td>
           <td><strong>水野朝陽</strong></td>
           <td>3</td>
           <td>2022-01-21</td>
@@ -1529,6 +1630,7 @@
         </tr>
         
         <tr data-name="三上悠亜">
+          <td style="width: 50px;"><div class="table-avatar-fallback">三</div></td>
           <td><strong>三上悠亜</strong></td>
           <td>3</td>
           <td>2023-07-21</td>
@@ -1537,6 +1639,7 @@
         </tr>
         
         <tr data-name="藤森里穂">
+          <td style="width: 50px;"><div class="table-avatar-fallback">藤</div></td>
           <td><strong>藤森里穂</strong></td>
           <td>2</td>
           <td>2025-11-13</td>
@@ -1545,6 +1648,7 @@
         </tr>
         
         <tr data-name="葵いぶき">
+          <td style="width: 50px;"><div class="table-avatar-fallback">葵</div></td>
           <td><strong>葵いぶき</strong></td>
           <td>2</td>
           <td>2026-04-30</td>
@@ -1553,6 +1657,7 @@
         </tr>
         
         <tr data-name="加州夏">
+          <td style="width: 50px;"><div class="table-avatar-fallback">加</div></td>
           <td><strong>加州夏</strong></td>
           <td>2</td>
           <td>2026-05-21</td>
@@ -1561,6 +1666,7 @@
         </tr>
         
         <tr data-name="青空ひかり">
+          <td style="width: 50px;"><div class="table-avatar-fallback">青</div></td>
           <td><strong>青空ひかり</strong></td>
           <td>2</td>
           <td>2026-04-14</td>
@@ -1569,6 +1675,7 @@
         </tr>
         
         <tr data-name="三田真鈴">
+          <td style="width: 50px;"><div class="table-avatar-fallback">三</div></td>
           <td><strong>三田真鈴</strong></td>
           <td>2</td>
           <td>2024-09-06</td>
@@ -1577,6 +1684,7 @@
         </tr>
         
         <tr data-name="ひょん">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ひ</div></td>
           <td><strong>ひょん</strong></td>
           <td>2</td>
           <td>2026-02-13</td>
@@ -1585,6 +1693,7 @@
         </tr>
         
         <tr data-name="サッポロ太郎">
+          <td style="width: 50px;"><div class="table-avatar-fallback">サ</div></td>
           <td><strong>サッポロ太郎</strong></td>
           <td>2</td>
           <td>2025-05-23</td>
@@ -1593,6 +1702,7 @@
         </tr>
         
         <tr data-name="莉々はるか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">莉</div></td>
           <td><strong>莉々はるか</strong></td>
           <td>2</td>
           <td>2025-12-25</td>
@@ -1601,6 +1711,7 @@
         </tr>
         
         <tr data-name="矢澤レシーブ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">矢</div></td>
           <td><strong>矢澤レシーブ</strong></td>
           <td>2</td>
           <td>2025-12-05</td>
@@ -1609,6 +1720,7 @@
         </tr>
         
         <tr data-name="犬神涼">
+          <td style="width: 50px;"><div class="table-avatar-fallback">犬</div></td>
           <td><strong>犬神涼</strong></td>
           <td>2</td>
           <td>2021-03-16</td>
@@ -1617,6 +1729,7 @@
         </tr>
         
         <tr data-name="響蓮">
+          <td style="width: 50px;"><div class="table-avatar-fallback">響</div></td>
           <td><strong>響蓮</strong></td>
           <td>2</td>
           <td>2024-04-16</td>
@@ -1625,6 +1738,7 @@
         </tr>
         
         <tr data-name="本庄鈴">
+          <td style="width: 50px;"><div class="table-avatar-fallback">本</div></td>
           <td><strong>本庄鈴</strong></td>
           <td>2</td>
           <td>2019-10-24</td>
@@ -1633,6 +1747,7 @@
         </tr>
         
         <tr data-name="日下部加奈">
+          <td style="width: 50px;"><div class="table-avatar-fallback">日</div></td>
           <td><strong>日下部加奈</strong></td>
           <td>2</td>
           <td>2025-07-18</td>
@@ -1641,6 +1756,7 @@
         </tr>
         
         <tr data-name="飛鳥りいな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">飛</div></td>
           <td><strong>飛鳥りいな</strong></td>
           <td>2</td>
           <td>2025-07-25</td>
@@ -1649,6 +1765,7 @@
         </tr>
         
         <tr data-name="菊乃らん">
+          <td style="width: 50px;"><div class="table-avatar-fallback">菊</div></td>
           <td><strong>菊乃らん</strong></td>
           <td>2</td>
           <td>2025-07-25</td>
@@ -1657,6 +1774,7 @@
         </tr>
         
         <tr data-name="神坂朋子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">神</div></td>
           <td><strong>神坂朋子</strong></td>
           <td>2</td>
           <td>2025-07-25</td>
@@ -1665,6 +1783,7 @@
         </tr>
         
         <tr data-name="水原みその">
+          <td style="width: 50px;"><div class="table-avatar-fallback">水</div></td>
           <td><strong>水原みその</strong></td>
           <td>2</td>
           <td>2025-07-25</td>
@@ -1673,6 +1792,7 @@
         </tr>
         
         <tr data-name="有村のぞみ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">有</div></td>
           <td><strong>有村のぞみ</strong></td>
           <td>2</td>
           <td>2025-07-25</td>
@@ -1681,6 +1801,7 @@
         </tr>
         
         <tr data-name="吉根ゆりあ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">吉</div></td>
           <td><strong>吉根ゆりあ</strong></td>
           <td>2</td>
           <td>2025-07-25</td>
@@ -1689,6 +1810,7 @@
         </tr>
         
         <tr data-name="葵つかさ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">葵</div></td>
           <td><strong>葵つかさ</strong></td>
           <td>2</td>
           <td>2023-07-21</td>
@@ -1697,6 +1819,7 @@
         </tr>
         
         <tr data-name="天使もえ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">天</div></td>
           <td><strong>天使もえ</strong></td>
           <td>2</td>
           <td>2023-01-12</td>
@@ -1705,6 +1828,7 @@
         </tr>
         
         <tr data-name="菅野さゆき">
+          <td style="width: 50px;"><div class="table-avatar-fallback">菅</div></td>
           <td><strong>菅野さゆき</strong></td>
           <td>2</td>
           <td>2012-09-16</td>
@@ -1713,6 +1837,7 @@
         </tr>
         
         <tr data-name="二羽紗愛">
+          <td style="width: 50px;"><div class="table-avatar-fallback">二</div></td>
           <td><strong>二羽紗愛</strong></td>
           <td>2</td>
           <td>2025-05-23</td>
@@ -1721,6 +1846,7 @@
         </tr>
         
         <tr data-name="月野かすみ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">月</div></td>
           <td><strong>月野かすみ</strong></td>
           <td>2</td>
           <td>2025-05-09</td>
@@ -1729,6 +1855,7 @@
         </tr>
         
         <tr data-name="皆月ひかる">
+          <td style="width: 50px;"><div class="table-avatar-fallback">皆</div></td>
           <td><strong>皆月ひかる</strong></td>
           <td>2</td>
           <td>2025-01-31</td>
@@ -1737,6 +1864,7 @@
         </tr>
         
         <tr data-name="工藤ララ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">工</div></td>
           <td><strong>工藤ララ</strong></td>
           <td>2</td>
           <td>2025-02-28</td>
@@ -1745,6 +1873,7 @@
         </tr>
         
         <tr data-name="七海那美">
+          <td style="width: 50px;"><div class="table-avatar-fallback">七</div></td>
           <td><strong>七海那美</strong></td>
           <td>2</td>
           <td>2025-03-28</td>
@@ -1753,6 +1882,7 @@
         </tr>
         
         <tr data-name="音海里奈">
+          <td style="width: 50px;"><div class="table-avatar-fallback">音</div></td>
           <td><strong>音海里奈</strong></td>
           <td>2</td>
           <td>2019-06-28</td>
@@ -1761,6 +1891,7 @@
         </tr>
         
         <tr data-name="デラ3">
+          <td style="width: 50px;"><div class="table-avatar-fallback">デ</div></td>
           <td><strong>デラ3</strong></td>
           <td>2</td>
           <td>2016-03-16</td>
@@ -1769,6 +1900,7 @@
         </tr>
         
         <tr data-name="ひでモンク">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ひ</div></td>
           <td><strong>ひでモンク</strong></td>
           <td>2</td>
           <td>2025-04-28</td>
@@ -1777,6 +1909,7 @@
         </tr>
         
         <tr data-name="小野夕子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">小</div></td>
           <td><strong>小野夕子</strong></td>
           <td>2</td>
           <td>2024-04-25</td>
@@ -1785,6 +1918,7 @@
         </tr>
         
         <tr data-name="gory松田">
+          <td style="width: 50px;"><div class="table-avatar-fallback">G</div></td>
           <td><strong>GORY松田</strong></td>
           <td>2</td>
           <td>2025-02-28</td>
@@ -1793,6 +1927,7 @@
         </tr>
         
         <tr data-name="溜池ゴロー">
+          <td style="width: 50px;"><div class="table-avatar-fallback">溜</div></td>
           <td><strong>溜池ゴロー</strong></td>
           <td>2</td>
           <td>2025-01-24</td>
@@ -1801,6 +1936,7 @@
         </tr>
         
         <tr data-name="水川スミレ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">水</div></td>
           <td><strong>水川スミレ</strong></td>
           <td>2</td>
           <td>2024-07-09</td>
@@ -1809,6 +1945,7 @@
         </tr>
         
         <tr data-name="古賀丈士">
+          <td style="width: 50px;"><div class="table-avatar-fallback">古</div></td>
           <td><strong>古賀丈士</strong></td>
           <td>2</td>
           <td>2024-12-20</td>
@@ -1817,6 +1954,7 @@
         </tr>
         
         <tr data-name="楓カレン">
+          <td style="width: 50px;"><div class="table-avatar-fallback">楓</div></td>
           <td><strong>楓カレン</strong></td>
           <td>2</td>
           <td>2024-12-06</td>
@@ -1825,6 +1963,7 @@
         </tr>
         
         <tr data-name="若宮穂乃">
+          <td style="width: 50px;"><div class="table-avatar-fallback">若</div></td>
           <td><strong>若宮穂乃</strong></td>
           <td>2</td>
           <td>2024-11-10</td>
@@ -1833,6 +1972,7 @@
         </tr>
         
         <tr data-name="笹倉杏">
+          <td style="width: 50px;"><div class="table-avatar-fallback">笹</div></td>
           <td><strong>笹倉杏</strong></td>
           <td>2</td>
           <td>2018-10-11</td>
@@ -1841,6 +1981,7 @@
         </tr>
         
         <tr data-name="阿部乃みく">
+          <td style="width: 50px;"><div class="table-avatar-fallback">阿</div></td>
           <td><strong>阿部乃みく</strong></td>
           <td>2</td>
           <td>2015-12-31</td>
@@ -1849,6 +1990,7 @@
         </tr>
         
         <tr data-name="松井優子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">松</div></td>
           <td><strong>松井優子</strong></td>
           <td>2</td>
           <td>2015-12-31</td>
@@ -1857,6 +1999,7 @@
         </tr>
         
         <tr data-name="桃乃木かな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">桃</div></td>
           <td><strong>桃乃木かな</strong></td>
           <td>2</td>
           <td>2023-10-06</td>
@@ -1865,6 +2008,7 @@
         </tr>
         
         <tr data-name="安齋らら">
+          <td style="width: 50px;"><div class="table-avatar-fallback">安</div></td>
           <td><strong>安齋らら</strong></td>
           <td>2</td>
           <td>2020-07-16</td>
@@ -1873,6 +2017,7 @@
         </tr>
         
         <tr data-name="三原ほのか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">三</div></td>
           <td><strong>三原ほのか</strong></td>
           <td>2</td>
           <td>2019-03-22</td>
@@ -1881,6 +2026,7 @@
         </tr>
         
         <tr data-name="nabe">
+          <td style="width: 50px;"><div class="table-avatar-fallback">N</div></td>
           <td><strong>NABE</strong></td>
           <td>2</td>
           <td>2024-05-24</td>
@@ -1889,6 +2035,7 @@
         </tr>
         
         <tr data-name="birdman鉄平">
+          <td style="width: 50px;"><div class="table-avatar-fallback">B</div></td>
           <td><strong>BIRDMAN鉄平</strong></td>
           <td>2</td>
           <td>2017-01-13</td>
@@ -1897,6 +2044,7 @@
         </tr>
         
         <tr data-name="綾瀬こころ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">綾</div></td>
           <td><strong>綾瀬こころ</strong></td>
           <td>2</td>
           <td>2024-07-16</td>
@@ -1905,6 +2053,7 @@
         </tr>
         
         <tr data-name="弓乃りむ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">弓</div></td>
           <td><strong>弓乃りむ</strong></td>
           <td>2</td>
           <td>2024-07-16</td>
@@ -1913,6 +2062,7 @@
         </tr>
         
         <tr data-name="凪沙ゆきの">
+          <td style="width: 50px;"><div class="table-avatar-fallback">凪</div></td>
           <td><strong>凪沙ゆきの</strong></td>
           <td>2</td>
           <td>2024-07-16</td>
@@ -1921,6 +2071,7 @@
         </tr>
         
         <tr data-name="舞咲みくに">
+          <td style="width: 50px;"><div class="table-avatar-fallback">舞</div></td>
           <td><strong>舞咲みくに</strong></td>
           <td>2</td>
           <td>2016-01-11</td>
@@ -1929,6 +2080,7 @@
         </tr>
         
         <tr data-name="綾瀬みなみ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">綾</div></td>
           <td><strong>綾瀬みなみ</strong></td>
           <td>2</td>
           <td>2016-03-13</td>
@@ -1937,6 +2089,7 @@
         </tr>
         
         <tr data-name="春菜はな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">春</div></td>
           <td><strong>春菜はな</strong></td>
           <td>2</td>
           <td>2019-07-07</td>
@@ -1945,6 +2098,7 @@
         </tr>
         
         <tr data-name="塚田詩織">
+          <td style="width: 50px;"><div class="table-avatar-fallback">塚</div></td>
           <td><strong>塚田詩織</strong></td>
           <td>2</td>
           <td>2018-08-13</td>
@@ -1953,6 +2107,7 @@
         </tr>
         
         <tr data-name="ヘンリー塚本">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ヘ</div></td>
           <td><strong>ヘンリー塚本</strong></td>
           <td>2</td>
           <td>2015-01-11</td>
@@ -1961,6 +2116,7 @@
         </tr>
         
         <tr data-name="黒川すみれ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">黒</div></td>
           <td><strong>黒川すみれ</strong></td>
           <td>2</td>
           <td>2024-06-11</td>
@@ -1969,6 +2125,7 @@
         </tr>
         
         <tr data-name="真木今日子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">真</div></td>
           <td><strong>真木今日子</strong></td>
           <td>2</td>
           <td>2023-01-20</td>
@@ -1977,6 +2134,7 @@
         </tr>
         
         <tr data-name="木下凛々子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">木</div></td>
           <td><strong>木下凛々子</strong></td>
           <td>2</td>
           <td>2024-06-07</td>
@@ -1985,6 +2143,7 @@
         </tr>
         
         <tr data-name="沖宮那美">
+          <td style="width: 50px;"><div class="table-avatar-fallback">沖</div></td>
           <td><strong>沖宮那美</strong></td>
           <td>2</td>
           <td>2024-01-05</td>
@@ -1993,6 +2152,7 @@
         </tr>
         
         <tr data-name="秋秀人">
+          <td style="width: 50px;"><div class="table-avatar-fallback">秋</div></td>
           <td><strong>秋秀人</strong></td>
           <td>2</td>
           <td>2010-08-19</td>
@@ -2001,6 +2161,7 @@
         </tr>
         
         <tr data-name="葉山さゆり">
+          <td style="width: 50px;"><div class="table-avatar-fallback">葉</div></td>
           <td><strong>葉山さゆり</strong></td>
           <td>2</td>
           <td>2023-12-08</td>
@@ -2009,6 +2170,7 @@
         </tr>
         
         <tr data-name="長澤あずさ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">長</div></td>
           <td><strong>長澤あずさ</strong></td>
           <td>2</td>
           <td>2013-03-28</td>
@@ -2017,6 +2179,7 @@
         </tr>
         
         <tr data-name="稲場るか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">稲</div></td>
           <td><strong>稲場るか</strong></td>
           <td>2</td>
           <td>2023-07-28</td>
@@ -2025,6 +2188,7 @@
         </tr>
         
         <tr data-name="本多翼">
+          <td style="width: 50px;"><div class="table-avatar-fallback">本</div></td>
           <td><strong>本多翼</strong></td>
           <td>2</td>
           <td>2014-01-07</td>
@@ -2033,6 +2197,7 @@
         </tr>
         
         <tr data-name="りお">
+          <td style="width: 50px;"><div class="table-avatar-fallback">り</div></td>
           <td><strong>りお</strong></td>
           <td>2</td>
           <td>2023-05-15</td>
@@ -2041,6 +2206,7 @@
         </tr>
         
         <tr data-name="ゆりか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ゆ</div></td>
           <td><strong>ゆりか</strong></td>
           <td>2</td>
           <td>2023-05-15</td>
@@ -2049,6 +2215,7 @@
         </tr>
         
         <tr data-name="みく">
+          <td style="width: 50px;"><div class="table-avatar-fallback">み</div></td>
           <td><strong>みく</strong></td>
           <td>2</td>
           <td>2023-05-15</td>
@@ -2057,6 +2224,7 @@
         </tr>
         
         <tr data-name="まゆ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ま</div></td>
           <td><strong>まゆ</strong></td>
           <td>2</td>
           <td>2023-05-15</td>
@@ -2065,6 +2233,7 @@
         </tr>
         
         <tr data-name="すずか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">す</div></td>
           <td><strong>すずか</strong></td>
           <td>2</td>
           <td>2023-05-15</td>
@@ -2073,6 +2242,7 @@
         </tr>
         
         <tr data-name="k.c.武田">
+          <td style="width: 50px;"><div class="table-avatar-fallback">K</div></td>
           <td><strong>K.C.武田</strong></td>
           <td>2</td>
           <td>2020-10-25</td>
@@ -2081,6 +2251,7 @@
         </tr>
         
         <tr data-name="eight">
+          <td style="width: 50px;"><div class="table-avatar-fallback">E</div></td>
           <td><strong>Eight</strong></td>
           <td>2</td>
           <td>2023-04-28</td>
@@ -2089,6 +2260,7 @@
         </tr>
         
         <tr data-name="真白愛梨">
+          <td style="width: 50px;"><div class="table-avatar-fallback">真</div></td>
           <td><strong>真白愛梨</strong></td>
           <td>2</td>
           <td>2018-06-02</td>
@@ -2097,6 +2269,7 @@
         </tr>
         
         <tr data-name="猿田まこと">
+          <td style="width: 50px;"><div class="table-avatar-fallback">猿</div></td>
           <td><strong>猿田まこと</strong></td>
           <td>1</td>
           <td>2026-03-05</td>
@@ -2105,6 +2278,7 @@
         </tr>
         
         <tr data-name="北野未奈">
+          <td style="width: 50px;"><div class="table-avatar-fallback">北</div></td>
           <td><strong>北野未奈</strong></td>
           <td>1</td>
           <td>2025-11-13</td>
@@ -2113,6 +2287,7 @@
         </tr>
         
         <tr data-name="石原希望">
+          <td style="width: 50px;"><div class="table-avatar-fallback">石</div></td>
           <td><strong>石原希望</strong></td>
           <td>1</td>
           <td>2026-05-14</td>
@@ -2121,6 +2296,7 @@
         </tr>
         
         <tr data-name="真栄田一門">
+          <td style="width: 50px;"><div class="table-avatar-fallback">真</div></td>
           <td><strong>真栄田一門</strong></td>
           <td>1</td>
           <td>2026-06-18</td>
@@ -2129,6 +2305,7 @@
         </tr>
         
         <tr data-name="ちんぽす">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ち</div></td>
           <td><strong>ちんぽす</strong></td>
           <td>1</td>
           <td>2026-05-21</td>
@@ -2137,6 +2314,7 @@
         </tr>
         
         <tr data-name="彩月七緒">
+          <td style="width: 50px;"><div class="table-avatar-fallback">彩</div></td>
           <td><strong>彩月七緒</strong></td>
           <td>1</td>
           <td>2026-05-07</td>
@@ -2145,6 +2323,7 @@
         </tr>
         
         <tr data-name="春花幸男">
+          <td style="width: 50px;"><div class="table-avatar-fallback">春</div></td>
           <td><strong>春花幸男</strong></td>
           <td>1</td>
           <td>2026-04-28</td>
@@ -2153,6 +2332,7 @@
         </tr>
         
         <tr data-name="まさのり">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ま</div></td>
           <td><strong>まさのり</strong></td>
           <td>1</td>
           <td>2025-01-14</td>
@@ -2161,6 +2341,7 @@
         </tr>
         
         <tr data-name="小湊よつ葉">
+          <td style="width: 50px;"><div class="table-avatar-fallback">小</div></td>
           <td><strong>小湊よつ葉</strong></td>
           <td>1</td>
           <td>2026-04-23</td>
@@ -2169,6 +2350,7 @@
         </tr>
         
         <tr data-name="村上悠華">
+          <td style="width: 50px;"><div class="table-avatar-fallback">村</div></td>
           <td><strong>村上悠華</strong></td>
           <td>1</td>
           <td>2025-04-08</td>
@@ -2177,6 +2359,7 @@
         </tr>
         
         <tr data-name="ゆる子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ゆ</div></td>
           <td><strong>ゆる子</strong></td>
           <td>1</td>
           <td>2025-04-08</td>
@@ -2185,6 +2368,7 @@
         </tr>
         
         <tr data-name="小野六花">
+          <td style="width: 50px;"><div class="table-avatar-fallback">小</div></td>
           <td><strong>小野六花</strong></td>
           <td>1</td>
           <td>2026-02-27</td>
@@ -2193,6 +2377,7 @@
         </tr>
         
         <tr data-name="おまめさん">
+          <td style="width: 50px;"><div class="table-avatar-fallback">お</div></td>
           <td><strong>おまめさん</strong></td>
           <td>1</td>
           <td>2026-02-19</td>
@@ -2201,6 +2386,7 @@
         </tr>
         
         <tr data-name="夏目響">
+          <td style="width: 50px;"><div class="table-avatar-fallback">夏</div></td>
           <td><strong>夏目響</strong></td>
           <td>1</td>
           <td>2025-03-18</td>
@@ -2209,6 +2395,7 @@
         </tr>
         
         <tr data-name="x">
+          <td style="width: 50px;"><div class="table-avatar-fallback">X</div></td>
           <td><strong>X</strong></td>
           <td>1</td>
           <td>2018-09-13</td>
@@ -2217,6 +2404,7 @@
         </tr>
         
         <tr data-name="hiroa">
+          <td style="width: 50px;"><div class="table-avatar-fallback">H</div></td>
           <td><strong>HiroA</strong></td>
           <td>1</td>
           <td>2025-01-17</td>
@@ -2225,6 +2413,7 @@
         </tr>
         
         <tr data-name="［jo］style">
+          <td style="width: 50px;"><div class="table-avatar-fallback">［</div></td>
           <td><strong>［Jo］Style</strong></td>
           <td>1</td>
           <td>2025-06-27</td>
@@ -2233,6 +2422,7 @@
         </tr>
         
         <tr data-name="高橋しょう子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">高</div></td>
           <td><strong>高橋しょう子</strong></td>
           <td>1</td>
           <td>2021-02-27</td>
@@ -2241,6 +2431,7 @@
         </tr>
         
         <tr data-name="工藤澪">
+          <td style="width: 50px;"><div class="table-avatar-fallback">工</div></td>
           <td><strong>工藤澪</strong></td>
           <td>1</td>
           <td>2013-03-28</td>
@@ -2249,6 +2440,7 @@
         </tr>
         
         <tr data-name="五条恋">
+          <td style="width: 50px;"><div class="table-avatar-fallback">五</div></td>
           <td><strong>五条恋</strong></td>
           <td>1</td>
           <td>2025-12-31</td>
@@ -2257,6 +2449,7 @@
         </tr>
         
         <tr data-name="ラムチョップ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ラ</div></td>
           <td><strong>ラムチョップ</strong></td>
           <td>1</td>
           <td>2025-12-04</td>
@@ -2265,6 +2458,7 @@
         </tr>
         
         <tr data-name="九井スナオ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">九</div></td>
           <td><strong>九井スナオ</strong></td>
           <td>1</td>
           <td>2025-12-05</td>
@@ -2273,6 +2467,7 @@
         </tr>
         
         <tr data-name="糸井瑠花">
+          <td style="width: 50px;"><div class="table-avatar-fallback">糸</div></td>
           <td><strong>糸井瑠花</strong></td>
           <td>1</td>
           <td>2025-11-27</td>
@@ -2281,6 +2476,7 @@
         </tr>
         
         <tr data-name="望月乃々">
+          <td style="width: 50px;"><div class="table-avatar-fallback">望</div></td>
           <td><strong>望月乃々</strong></td>
           <td>1</td>
           <td>2025-08-02</td>
@@ -2289,6 +2485,7 @@
         </tr>
         
         <tr data-name="akira">
+          <td style="width: 50px;"><div class="table-avatar-fallback">A</div></td>
           <td><strong>AKIRA</strong></td>
           <td>1</td>
           <td>2021-06-10</td>
@@ -2297,6 +2494,7 @@
         </tr>
         
         <tr data-name="伊藤洋子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">伊</div></td>
           <td><strong>伊藤洋子</strong></td>
           <td>1</td>
           <td>2018-08-29</td>
@@ -2305,6 +2503,7 @@
         </tr>
         
         <tr data-name="七瀬もな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">七</div></td>
           <td><strong>七瀬もな</strong></td>
           <td>1</td>
           <td>2021-03-16</td>
@@ -2313,6 +2512,7 @@
         </tr>
         
         <tr data-name="柏木ふみか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">柏</div></td>
           <td><strong>柏木ふみか</strong></td>
           <td>1</td>
           <td>2025-09-11</td>
@@ -2321,6 +2521,7 @@
         </tr>
         
         <tr data-name="篠真有">
+          <td style="width: 50px;"><div class="table-avatar-fallback">篠</div></td>
           <td><strong>篠真有</strong></td>
           <td>1</td>
           <td>2025-06-06</td>
@@ -2329,6 +2530,7 @@
         </tr>
         
         <tr data-name="美竹すず">
+          <td style="width: 50px;"><div class="table-avatar-fallback">美</div></td>
           <td><strong>美竹すず</strong></td>
           <td>1</td>
           <td>2016-05-08</td>
@@ -2337,6 +2539,7 @@
         </tr>
         
         <tr data-name="蜜美杏">
+          <td style="width: 50px;"><div class="table-avatar-fallback">蜜</div></td>
           <td><strong>蜜美杏</strong></td>
           <td>1</td>
           <td>2025-07-25</td>
@@ -2345,6 +2548,7 @@
         </tr>
         
         <tr data-name="花柳杏奈">
+          <td style="width: 50px;"><div class="table-avatar-fallback">花</div></td>
           <td><strong>花柳杏奈</strong></td>
           <td>1</td>
           <td>2025-07-25</td>
@@ -2353,6 +2557,7 @@
         </tr>
         
         <tr data-name="美木ひなの">
+          <td style="width: 50px;"><div class="table-avatar-fallback">美</div></td>
           <td><strong>美木ひなの</strong></td>
           <td>1</td>
           <td>2025-07-25</td>
@@ -2361,6 +2566,7 @@
         </tr>
         
         <tr data-name="碧波しずく">
+          <td style="width: 50px;"><div class="table-avatar-fallback">碧</div></td>
           <td><strong>碧波しずく</strong></td>
           <td>1</td>
           <td>2025-07-25</td>
@@ -2369,6 +2575,7 @@
         </tr>
         
         <tr data-name="深月めい">
+          <td style="width: 50px;"><div class="table-avatar-fallback">深</div></td>
           <td><strong>深月めい</strong></td>
           <td>1</td>
           <td>2025-07-25</td>
@@ -2377,6 +2584,7 @@
         </tr>
         
         <tr data-name="楪カレン">
+          <td style="width: 50px;"><div class="table-avatar-fallback">楪</div></td>
           <td><strong>楪カレン</strong></td>
           <td>1</td>
           <td>2025-07-25</td>
@@ -2385,6 +2593,7 @@
         </tr>
         
         <tr data-name="有森涼">
+          <td style="width: 50px;"><div class="table-avatar-fallback">有</div></td>
           <td><strong>有森涼</strong></td>
           <td>1</td>
           <td>2025-07-25</td>
@@ -2393,6 +2602,7 @@
         </tr>
         
         <tr data-name="相沢みなみ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">相</div></td>
           <td><strong>相沢みなみ</strong></td>
           <td>1</td>
           <td>2023-03-14</td>
@@ -2401,6 +2611,7 @@
         </tr>
         
         <tr data-name="松下紗栄子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">松</div></td>
           <td><strong>松下紗栄子</strong></td>
           <td>1</td>
           <td>2016-08-07</td>
@@ -2409,6 +2620,7 @@
         </tr>
         
         <tr data-name="カンナナ・ダイナナ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">カ</div></td>
           <td><strong>カンナナ・ダイナナ</strong></td>
           <td>1</td>
           <td>2023-01-12</td>
@@ -2417,6 +2629,7 @@
         </tr>
         
         <tr data-name="えび">
+          <td style="width: 50px;"><div class="table-avatar-fallback">え</div></td>
           <td><strong>えび</strong></td>
           <td>1</td>
           <td>2025-09-11</td>
@@ -2425,6 +2638,7 @@
         </tr>
         
         <tr data-name="岬あずさ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">岬</div></td>
           <td><strong>岬あずさ</strong></td>
           <td>1</td>
           <td>2024-08-24</td>
@@ -2433,6 +2647,7 @@
         </tr>
         
         <tr data-name="松永さな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">松</div></td>
           <td><strong>松永さな</strong></td>
           <td>1</td>
           <td>2020-01-12</td>
@@ -2441,6 +2656,7 @@
         </tr>
         
         <tr data-name="上羽絢">
+          <td style="width: 50px;"><div class="table-avatar-fallback">上</div></td>
           <td><strong>上羽絢</strong></td>
           <td>1</td>
           <td>2025-04-04</td>
@@ -2449,6 +2665,7 @@
         </tr>
         
         <tr data-name="av監督トッキー">
+          <td style="width: 50px;"><div class="table-avatar-fallback">A</div></td>
           <td><strong>AV監督トッキー</strong></td>
           <td>1</td>
           <td>2025-05-09</td>
@@ -2457,6 +2674,7 @@
         </tr>
         
         <tr data-name="結城のの">
+          <td style="width: 50px;"><div class="table-avatar-fallback">結</div></td>
           <td><strong>結城のの</strong></td>
           <td>1</td>
           <td>2024-05-21</td>
@@ -2465,6 +2683,7 @@
         </tr>
         
         <tr data-name="馨">
+          <td style="width: 50px;"><div class="table-avatar-fallback">馨</div></td>
           <td><strong>馨</strong></td>
           <td>1</td>
           <td>2020-05-19</td>
@@ -2473,6 +2692,7 @@
         </tr>
         
         <tr data-name="前田桃杏">
+          <td style="width: 50px;"><div class="table-avatar-fallback">前</div></td>
           <td><strong>前田桃杏</strong></td>
           <td>1</td>
           <td>2020-05-19</td>
@@ -2481,6 +2701,7 @@
         </tr>
         
         <tr data-name="由良かな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">由</div></td>
           <td><strong>由良かな</strong></td>
           <td>1</td>
           <td>2025-01-03</td>
@@ -2489,6 +2710,7 @@
         </tr>
         
         <tr data-name="ケバブ岡崎">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ケ</div></td>
           <td><strong>ケバブ岡崎</strong></td>
           <td>1</td>
           <td>2025-02-07</td>
@@ -2497,6 +2719,7 @@
         </tr>
         
         <tr data-name="minamo">
+          <td style="width: 50px;"><div class="table-avatar-fallback">M</div></td>
           <td><strong>MINAMO</strong></td>
           <td>1</td>
           <td>2025-02-07</td>
@@ -2505,6 +2728,7 @@
         </tr>
         
         <tr data-name="仁藤さや香">
+          <td style="width: 50px;"><div class="table-avatar-fallback">仁</div></td>
           <td><strong>仁藤さや香</strong></td>
           <td>1</td>
           <td>2024-04-05</td>
@@ -2513,6 +2737,7 @@
         </tr>
         
         <tr data-name="遊星">
+          <td style="width: 50px;"><div class="table-avatar-fallback">遊</div></td>
           <td><strong>遊星</strong></td>
           <td>1</td>
           <td>2025-03-29</td>
@@ -2521,6 +2746,7 @@
         </tr>
         
         <tr data-name="夏川あゆみ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">夏</div></td>
           <td><strong>夏川あゆみ</strong></td>
           <td>1</td>
           <td>2024-07-20</td>
@@ -2529,6 +2755,7 @@
         </tr>
         
         <tr data-name="チーム パイン☆エンジェルス">
+          <td style="width: 50px;"><div class="table-avatar-fallback">チ</div></td>
           <td><strong>チーム パイン☆エンジェルス</strong></td>
           <td>1</td>
           <td>2025-03-29</td>
@@ -2537,6 +2764,7 @@
         </tr>
         
         <tr data-name="辻甲二">
+          <td style="width: 50px;"><div class="table-avatar-fallback">辻</div></td>
           <td><strong>辻甲二</strong></td>
           <td>1</td>
           <td>2025-03-15</td>
@@ -2545,6 +2773,7 @@
         </tr>
         
         <tr data-name="西野絵美">
+          <td style="width: 50px;"><div class="table-avatar-fallback">西</div></td>
           <td><strong>西野絵美</strong></td>
           <td>1</td>
           <td>2024-11-02</td>
@@ -2553,6 +2782,7 @@
         </tr>
         
         <tr data-name="明里ともか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">明</div></td>
           <td><strong>明里ともか</strong></td>
           <td>1</td>
           <td>2024-11-02</td>
@@ -2561,6 +2791,7 @@
         </tr>
         
         <tr data-name="ノートン">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ノ</div></td>
           <td><strong>ノートン</strong></td>
           <td>1</td>
           <td>2024-03-02</td>
@@ -2569,6 +2800,7 @@
         </tr>
         
         <tr data-name="duke">
+          <td style="width: 50px;"><div class="table-avatar-fallback">D</div></td>
           <td><strong>DUKE</strong></td>
           <td>1</td>
           <td>2024-11-02</td>
@@ -2577,6 +2809,7 @@
         </tr>
         
         <tr data-name="ヒモパン・オブ・ジョイトイ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ヒ</div></td>
           <td><strong>ヒモパン・オブ・ジョイトイ</strong></td>
           <td>1</td>
           <td>2025-02-14</td>
@@ -2585,6 +2818,7 @@
         </tr>
         
         <tr data-name="森川圭">
+          <td style="width: 50px;"><div class="table-avatar-fallback">森</div></td>
           <td><strong>森川圭</strong></td>
           <td>1</td>
           <td>2024-09-26</td>
@@ -2593,6 +2827,7 @@
         </tr>
         
         <tr data-name="木村玲衣">
+          <td style="width: 50px;"><div class="table-avatar-fallback">木</div></td>
           <td><strong>木村玲衣</strong></td>
           <td>1</td>
           <td>2025-02-21</td>
@@ -2601,6 +2836,7 @@
         </tr>
         
         <tr data-name="八蜜凛">
+          <td style="width: 50px;"><div class="table-avatar-fallback">八</div></td>
           <td><strong>八蜜凛</strong></td>
           <td>1</td>
           <td>2025-04-24</td>
@@ -2609,6 +2845,7 @@
         </tr>
         
         <tr data-name="よーすけ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">よ</div></td>
           <td><strong>よーすけ</strong></td>
           <td>1</td>
           <td>2025-04-24</td>
@@ -2617,6 +2854,7 @@
         </tr>
         
         <tr data-name="高瀬りな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">高</div></td>
           <td><strong>高瀬りな</strong></td>
           <td>1</td>
           <td>2025-02-21</td>
@@ -2625,6 +2863,7 @@
         </tr>
         
         <tr data-name="山口メンバー">
+          <td style="width: 50px;"><div class="table-avatar-fallback">山</div></td>
           <td><strong>山口メンバー</strong></td>
           <td>1</td>
           <td>2021-06-24</td>
@@ -2633,6 +2872,7 @@
         </tr>
         
         <tr data-name="天音まひな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">天</div></td>
           <td><strong>天音まひな</strong></td>
           <td>1</td>
           <td>2022-01-25</td>
@@ -2641,6 +2881,7 @@
         </tr>
         
         <tr data-name="神宮寺ナオ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">神</div></td>
           <td><strong>神宮寺ナオ</strong></td>
           <td>1</td>
           <td>2020-02-07</td>
@@ -2649,6 +2890,7 @@
         </tr>
         
         <tr data-name="富岡ありさ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">富</div></td>
           <td><strong>富岡ありさ</strong></td>
           <td>1</td>
           <td>2024-12-06</td>
@@ -2657,6 +2899,7 @@
         </tr>
         
         <tr data-name="磯井啓">
+          <td style="width: 50px;"><div class="table-avatar-fallback">磯</div></td>
           <td><strong>磯井啓</strong></td>
           <td>1</td>
           <td>2025-02-20</td>
@@ -2665,6 +2908,7 @@
         </tr>
         
         <tr data-name="夕刊">
+          <td style="width: 50px;"><div class="table-avatar-fallback">夕</div></td>
           <td><strong>夕刊</strong></td>
           <td>1</td>
           <td>2025-02-14</td>
@@ -2673,6 +2917,7 @@
         </tr>
         
         <tr data-name="二階堂麗">
+          <td style="width: 50px;"><div class="table-avatar-fallback">二</div></td>
           <td><strong>二階堂麗</strong></td>
           <td>1</td>
           <td>2025-01-17</td>
@@ -2681,6 +2926,7 @@
         </tr>
         
         <tr data-name="須崎美羽">
+          <td style="width: 50px;"><div class="table-avatar-fallback">須</div></td>
           <td><strong>須崎美羽</strong></td>
           <td>1</td>
           <td>2024-08-02</td>
@@ -2689,6 +2935,7 @@
         </tr>
         
         <tr data-name="大谷卓生">
+          <td style="width: 50px;"><div class="table-avatar-fallback">大</div></td>
           <td><strong>大谷卓生</strong></td>
           <td>1</td>
           <td>2024-08-02</td>
@@ -2697,6 +2944,7 @@
         </tr>
         
         <tr data-name="栗山莉緒">
+          <td style="width: 50px;"><div class="table-avatar-fallback">栗</div></td>
           <td><strong>栗山莉緒</strong></td>
           <td>1</td>
           <td>2022-02-18</td>
@@ -2705,6 +2953,7 @@
         </tr>
         
         <tr data-name="幾野まち">
+          <td style="width: 50px;"><div class="table-avatar-fallback">幾</div></td>
           <td><strong>幾野まち</strong></td>
           <td>1</td>
           <td>2024-12-20</td>
@@ -2713,6 +2962,7 @@
         </tr>
         
         <tr data-name="五十嵐美月">
+          <td style="width: 50px;"><div class="table-avatar-fallback">五</div></td>
           <td><strong>五十嵐美月</strong></td>
           <td>1</td>
           <td>2024-12-20</td>
@@ -2721,6 +2971,7 @@
         </tr>
         
         <tr data-name="汐世（有栖花あか）">
+          <td style="width: 50px;"><div class="table-avatar-fallback">汐</div></td>
           <td><strong>汐世（有栖花あか）</strong></td>
           <td>1</td>
           <td>2022-02-08</td>
@@ -2729,6 +2980,7 @@
         </tr>
         
         <tr data-name="楓ふうあ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">楓</div></td>
           <td><strong>楓ふうあ</strong></td>
           <td>1</td>
           <td>2024-01-19</td>
@@ -2737,6 +2989,7 @@
         </tr>
         
         <tr data-name="昇天シロー">
+          <td style="width: 50px;"><div class="table-avatar-fallback">昇</div></td>
           <td><strong>昇天シロー</strong></td>
           <td>1</td>
           <td>2024-01-19</td>
@@ -2745,6 +2998,7 @@
         </tr>
         
         <tr data-name="美谷朱音（美谷朱里）">
+          <td style="width: 50px;"><div class="table-avatar-fallback">美</div></td>
           <td><strong>美谷朱音（美谷朱里）</strong></td>
           <td>1</td>
           <td>2024-05-21</td>
@@ -2753,6 +3007,7 @@
         </tr>
         
         <tr data-name="吉澤友貴">
+          <td style="width: 50px;"><div class="table-avatar-fallback">吉</div></td>
           <td><strong>吉澤友貴</strong></td>
           <td>1</td>
           <td>2024-12-06</td>
@@ -2761,6 +3016,7 @@
         </tr>
         
         <tr data-name="古川ほのか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">古</div></td>
           <td><strong>古川ほのか</strong></td>
           <td>1</td>
           <td>2024-12-06</td>
@@ -2769,6 +3025,7 @@
         </tr>
         
         <tr data-name="夢実かなえ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">夢</div></td>
           <td><strong>夢実かなえ</strong></td>
           <td>1</td>
           <td>2024-09-13</td>
@@ -2777,6 +3034,7 @@
         </tr>
         
         <tr data-name="タナカ・ベーコン">
+          <td style="width: 50px;"><div class="table-avatar-fallback">タ</div></td>
           <td><strong>タナカ・ベーコン</strong></td>
           <td>1</td>
           <td>2024-11-10</td>
@@ -2785,6 +3043,7 @@
         </tr>
         
         <tr data-name="都月るいさ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">都</div></td>
           <td><strong>都月るいさ</strong></td>
           <td>1</td>
           <td>2024-09-20</td>
@@ -2793,6 +3052,7 @@
         </tr>
         
         <tr data-name="芳賀栄太郎">
+          <td style="width: 50px;"><div class="table-avatar-fallback">芳</div></td>
           <td><strong>芳賀栄太郎</strong></td>
           <td>1</td>
           <td>2024-10-05</td>
@@ -2801,6 +3061,7 @@
         </tr>
         
         <tr data-name="壇凛沙">
+          <td style="width: 50px;"><div class="table-avatar-fallback">壇</div></td>
           <td><strong>壇凛沙</strong></td>
           <td>1</td>
           <td>2021-08-12</td>
@@ -2809,6 +3070,7 @@
         </tr>
         
         <tr data-name="たちばな日菜">
+          <td style="width: 50px;"><div class="table-avatar-fallback">た</div></td>
           <td><strong>たちばな日菜</strong></td>
           <td>1</td>
           <td>2021-12-21</td>
@@ -2817,6 +3079,7 @@
         </tr>
         
         <tr data-name="藤かんな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">藤</div></td>
           <td><strong>藤かんな</strong></td>
           <td>1</td>
           <td>2023-08-08</td>
@@ -2825,6 +3088,7 @@
         </tr>
         
         <tr data-name="沙月ふみの">
+          <td style="width: 50px;"><div class="table-avatar-fallback">沙</div></td>
           <td><strong>沙月ふみの</strong></td>
           <td>1</td>
           <td>2024-10-18</td>
@@ -2833,6 +3097,7 @@
         </tr>
         
         <tr data-name="菅原養史">
+          <td style="width: 50px;"><div class="table-avatar-fallback">菅</div></td>
           <td><strong>菅原養史</strong></td>
           <td>1</td>
           <td>2015-07-11</td>
@@ -2841,6 +3106,7 @@
         </tr>
         
         <tr data-name="芦名ほのか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">芦</div></td>
           <td><strong>芦名ほのか</strong></td>
           <td>1</td>
           <td>2025-12-15</td>
@@ -2849,6 +3115,7 @@
         </tr>
         
         <tr data-name="穂高結花">
+          <td style="width: 50px;"><div class="table-avatar-fallback">穂</div></td>
           <td><strong>穂高結花</strong></td>
           <td>1</td>
           <td>2025-12-15</td>
@@ -2857,6 +3124,7 @@
         </tr>
         
         <tr data-name="穂高ゆうき">
+          <td style="width: 50px;"><div class="table-avatar-fallback">穂</div></td>
           <td><strong>穂高ゆうき</strong></td>
           <td>1</td>
           <td>2015-07-11</td>
@@ -2865,6 +3133,7 @@
         </tr>
         
         <tr data-name="水川潤">
+          <td style="width: 50px;"><div class="table-avatar-fallback">水</div></td>
           <td><strong>水川潤</strong></td>
           <td>1</td>
           <td>2025-12-15</td>
@@ -2873,6 +3142,7 @@
         </tr>
         
         <tr data-name="橘京花">
+          <td style="width: 50px;"><div class="table-avatar-fallback">橘</div></td>
           <td><strong>橘京花</strong></td>
           <td>1</td>
           <td>2025-12-15</td>
@@ -2881,6 +3151,7 @@
         </tr>
         
         <tr data-name="東凛">
+          <td style="width: 50px;"><div class="table-avatar-fallback">東</div></td>
           <td><strong>東凛</strong></td>
           <td>1</td>
           <td>2025-12-15</td>
@@ -2889,6 +3160,7 @@
         </tr>
         
         <tr data-name="杏奈">
+          <td style="width: 50px;"><div class="table-avatar-fallback">杏</div></td>
           <td><strong>杏奈</strong></td>
           <td>1</td>
           <td>2025-12-15</td>
@@ -2897,6 +3169,7 @@
         </tr>
         
         <tr data-name="本田もも">
+          <td style="width: 50px;"><div class="table-avatar-fallback">本</div></td>
           <td><strong>本田もも</strong></td>
           <td>1</td>
           <td>2025-12-15</td>
@@ -2905,6 +3178,7 @@
         </tr>
         
         <tr data-name="月見伊織">
+          <td style="width: 50px;"><div class="table-avatar-fallback">月</div></td>
           <td><strong>月見伊織</strong></td>
           <td>1</td>
           <td>2025-12-15</td>
@@ -2913,6 +3187,7 @@
         </tr>
         
         <tr data-name="我妻里帆">
+          <td style="width: 50px;"><div class="table-avatar-fallback">我</div></td>
           <td><strong>我妻里帆</strong></td>
           <td>1</td>
           <td>2025-12-15</td>
@@ -2921,6 +3196,7 @@
         </tr>
         
         <tr data-name="恋渕ももな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">恋</div></td>
           <td><strong>恋渕ももな</strong></td>
           <td>1</td>
           <td>2024-10-29</td>
@@ -2929,6 +3205,7 @@
         </tr>
         
         <tr data-name="徳永しおり">
+          <td style="width: 50px;"><div class="table-avatar-fallback">徳</div></td>
           <td><strong>徳永しおり</strong></td>
           <td>1</td>
           <td>2025-12-15</td>
@@ -2937,6 +3214,7 @@
         </tr>
         
         <tr data-name="富永葵">
+          <td style="width: 50px;"><div class="table-avatar-fallback">富</div></td>
           <td><strong>富永葵</strong></td>
           <td>1</td>
           <td>2025-12-15</td>
@@ -2945,6 +3223,7 @@
         </tr>
         
         <tr data-name="友田彩也香">
+          <td style="width: 50px;"><div class="table-avatar-fallback">友</div></td>
           <td><strong>友田彩也香</strong></td>
           <td>1</td>
           <td>2025-12-15</td>
@@ -2953,6 +3232,7 @@
         </tr>
         
         <tr data-name="いろり牧場">
+          <td style="width: 50px;"><div class="table-avatar-fallback">い</div></td>
           <td><strong>いろり牧場</strong></td>
           <td>1</td>
           <td>2024-10-29</td>
@@ -2961,6 +3241,7 @@
         </tr>
         
         <tr data-name="結月恭子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">結</div></td>
           <td><strong>結月恭子</strong></td>
           <td>1</td>
           <td>2017-08-01</td>
@@ -2969,6 +3250,7 @@
         </tr>
         
         <tr data-name="宇野みれい">
+          <td style="width: 50px;"><div class="table-avatar-fallback">宇</div></td>
           <td><strong>宇野みれい</strong></td>
           <td>1</td>
           <td>2024-08-23</td>
@@ -2977,6 +3259,7 @@
         </tr>
         
         <tr data-name="美波瀬奈">
+          <td style="width: 50px;"><div class="table-avatar-fallback">美</div></td>
           <td><strong>美波瀬奈</strong></td>
           <td>1</td>
           <td>2014-07-27</td>
@@ -2985,6 +3268,7 @@
         </tr>
         
         <tr data-name="白石もも">
+          <td style="width: 50px;"><div class="table-avatar-fallback">白</div></td>
           <td><strong>白石もも</strong></td>
           <td>1</td>
           <td>2024-05-28</td>
@@ -2993,6 +3277,7 @@
         </tr>
         
         <tr data-name="森沢かな（飯岡かなこ）">
+          <td style="width: 50px;"><div class="table-avatar-fallback">森</div></td>
           <td><strong>森沢かな（飯岡かなこ）</strong></td>
           <td>1</td>
           <td>2024-04-19</td>
@@ -3001,6 +3286,7 @@
         </tr>
         
         <tr data-name="桃果あかり">
+          <td style="width: 50px;"><div class="table-avatar-fallback">桃</div></td>
           <td><strong>桃果あかり</strong></td>
           <td>1</td>
           <td>2023-11-10</td>
@@ -3009,6 +3295,7 @@
         </tr>
         
         <tr data-name="朝日りお">
+          <td style="width: 50px;"><div class="table-avatar-fallback">朝</div></td>
           <td><strong>朝日りお</strong></td>
           <td>1</td>
           <td>2024-08-13</td>
@@ -3017,6 +3304,7 @@
         </tr>
         
         <tr data-name="月野江すい">
+          <td style="width: 50px;"><div class="table-avatar-fallback">月</div></td>
           <td><strong>月野江すい</strong></td>
           <td>1</td>
           <td>2024-08-30</td>
@@ -3025,6 +3313,7 @@
         </tr>
         
         <tr data-name="シモン">
+          <td style="width: 50px;"><div class="table-avatar-fallback">シ</div></td>
           <td><strong>シモン</strong></td>
           <td>1</td>
           <td>2022-10-21</td>
@@ -3033,6 +3322,7 @@
         </tr>
         
         <tr data-name="こういちダビッドソン">
+          <td style="width: 50px;"><div class="table-avatar-fallback">こ</div></td>
           <td><strong>こういちダビッドソン</strong></td>
           <td>1</td>
           <td>2024-07-19</td>
@@ -3041,6 +3331,7 @@
         </tr>
         
         <tr data-name="うさぴょん。">
+          <td style="width: 50px;"><div class="table-avatar-fallback">う</div></td>
           <td><strong>うさぴょん。</strong></td>
           <td>1</td>
           <td>2024-04-12</td>
@@ -3049,6 +3340,7 @@
         </tr>
         
         <tr data-name="wild・seven">
+          <td style="width: 50px;"><div class="table-avatar-fallback">W</div></td>
           <td><strong>WILD・SEVEN</strong></td>
           <td>1</td>
           <td>2021-01-01</td>
@@ -3057,6 +3349,7 @@
         </tr>
         
         <tr data-name="藤子みお">
+          <td style="width: 50px;"><div class="table-avatar-fallback">藤</div></td>
           <td><strong>藤子みお</strong></td>
           <td>1</td>
           <td>2024-07-16</td>
@@ -3065,6 +3358,7 @@
         </tr>
         
         <tr data-name="羽月乃蒼">
+          <td style="width: 50px;"><div class="table-avatar-fallback">羽</div></td>
           <td><strong>羽月乃蒼</strong></td>
           <td>1</td>
           <td>2024-07-16</td>
@@ -3073,6 +3367,7 @@
         </tr>
         
         <tr data-name="絵地メコン">
+          <td style="width: 50px;"><div class="table-avatar-fallback">絵</div></td>
           <td><strong>絵地メコン</strong></td>
           <td>1</td>
           <td>2023-06-30</td>
@@ -3081,6 +3376,7 @@
         </tr>
         
         <tr data-name="立川理恵">
+          <td style="width: 50px;"><div class="table-avatar-fallback">立</div></td>
           <td><strong>立川理恵</strong></td>
           <td>1</td>
           <td>2014-01-24</td>
@@ -3089,6 +3385,7 @@
         </tr>
         
         <tr data-name="武田怜香">
+          <td style="width: 50px;"><div class="table-avatar-fallback">武</div></td>
           <td><strong>武田怜香</strong></td>
           <td>1</td>
           <td>2024-07-16</td>
@@ -3097,6 +3394,7 @@
         </tr>
         
         <tr data-name="星乃夏月">
+          <td style="width: 50px;"><div class="table-avatar-fallback">星</div></td>
           <td><strong>星乃夏月</strong></td>
           <td>1</td>
           <td>2024-07-16</td>
@@ -3105,6 +3403,7 @@
         </tr>
         
         <tr data-name="如月りいさ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">如</div></td>
           <td><strong>如月りいさ</strong></td>
           <td>1</td>
           <td>2024-05-31</td>
@@ -3113,6 +3412,7 @@
         </tr>
         
         <tr data-name="坂本優二">
+          <td style="width: 50px;"><div class="table-avatar-fallback">坂</div></td>
           <td><strong>坂本優二</strong></td>
           <td>1</td>
           <td>2011-08-26</td>
@@ -3121,6 +3421,7 @@
         </tr>
         
         <tr data-name="イタカ・スミスリンパウダー">
+          <td style="width: 50px;"><div class="table-avatar-fallback">イ</div></td>
           <td><strong>イタカ・スミスリンパウダー</strong></td>
           <td>1</td>
           <td>2014-10-23</td>
@@ -3129,6 +3430,7 @@
         </tr>
         
         <tr data-name="高沢沙耶">
+          <td style="width: 50px;"><div class="table-avatar-fallback">高</div></td>
           <td><strong>高沢沙耶</strong></td>
           <td>1</td>
           <td>2015-01-11</td>
@@ -3137,6 +3439,7 @@
         </tr>
         
         <tr data-name="羽月希">
+          <td style="width: 50px;"><div class="table-avatar-fallback">羽</div></td>
           <td><strong>羽月希</strong></td>
           <td>1</td>
           <td>2015-01-11</td>
@@ -3145,6 +3448,7 @@
         </tr>
         
         <tr data-name="宝瀬博教">
+          <td style="width: 50px;"><div class="table-avatar-fallback">宝</div></td>
           <td><strong>宝瀬博教</strong></td>
           <td>1</td>
           <td>2020-10-03</td>
@@ -3153,6 +3457,7 @@
         </tr>
         
         <tr data-name="五十嵐しのぶ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">五</div></td>
           <td><strong>五十嵐しのぶ</strong></td>
           <td>1</td>
           <td>2015-01-11</td>
@@ -3161,6 +3466,7 @@
         </tr>
         
         <tr data-name="駒込忠">
+          <td style="width: 50px;"><div class="table-avatar-fallback">駒</div></td>
           <td><strong>駒込忠</strong></td>
           <td>1</td>
           <td>2014-12-07</td>
@@ -3169,6 +3475,7 @@
         </tr>
         
         <tr data-name="音羽レオン">
+          <td style="width: 50px;"><div class="table-avatar-fallback">音</div></td>
           <td><strong>音羽レオン</strong></td>
           <td>1</td>
           <td>2014-08-07</td>
@@ -3177,6 +3484,7 @@
         </tr>
         
         <tr data-name="桃宮もも">
+          <td style="width: 50px;"><div class="table-avatar-fallback">桃</div></td>
           <td><strong>桃宮もも</strong></td>
           <td>1</td>
           <td>2014-08-07</td>
@@ -3185,6 +3493,7 @@
         </tr>
         
         <tr data-name="本田莉子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">本</div></td>
           <td><strong>本田莉子</strong></td>
           <td>1</td>
           <td>2014-12-07</td>
@@ -3193,6 +3502,7 @@
         </tr>
         
         <tr data-name="尾島みゆき">
+          <td style="width: 50px;"><div class="table-avatar-fallback">尾</div></td>
           <td><strong>尾島みゆき</strong></td>
           <td>1</td>
           <td>2014-08-07</td>
@@ -3201,6 +3511,7 @@
         </tr>
         
         <tr data-name="前田優希">
+          <td style="width: 50px;"><div class="table-avatar-fallback">前</div></td>
           <td><strong>前田優希</strong></td>
           <td>1</td>
           <td>2012-04-19</td>
@@ -3209,6 +3520,7 @@
         </tr>
         
         <tr data-name="初音みのり">
+          <td style="width: 50px;"><div class="table-avatar-fallback">初</div></td>
           <td><strong>初音みのり</strong></td>
           <td>1</td>
           <td>2021-10-26</td>
@@ -3217,6 +3529,7 @@
         </tr>
         
         <tr data-name="よっちゃん">
+          <td style="width: 50px;"><div class="table-avatar-fallback">よ</div></td>
           <td><strong>よっちゃん</strong></td>
           <td>1</td>
           <td>2014-08-07</td>
@@ -3225,6 +3538,7 @@
         </tr>
         
         <tr data-name="ももかさくら">
+          <td style="width: 50px;"><div class="table-avatar-fallback">も</div></td>
           <td><strong>ももかさくら</strong></td>
           <td>1</td>
           <td>2012-04-19</td>
@@ -3233,6 +3547,7 @@
         </tr>
         
         <tr data-name="藤咲エレン">
+          <td style="width: 50px;"><div class="table-avatar-fallback">藤</div></td>
           <td><strong>藤咲エレン</strong></td>
           <td>1</td>
           <td>2018-01-07</td>
@@ -3241,6 +3556,7 @@
         </tr>
         
         <tr data-name="藤原まりあ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">藤</div></td>
           <td><strong>藤原まりあ</strong></td>
           <td>1</td>
           <td>2024-05-23</td>
@@ -3249,6 +3565,7 @@
         </tr>
         
         <tr data-name="藤木紗英">
+          <td style="width: 50px;"><div class="table-avatar-fallback">藤</div></td>
           <td><strong>藤木紗英</strong></td>
           <td>1</td>
           <td>2022-11-05</td>
@@ -3257,6 +3574,7 @@
         </tr>
         
         <tr data-name="織田真子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">織</div></td>
           <td><strong>織田真子</strong></td>
           <td>1</td>
           <td>2019-07-07</td>
@@ -3265,6 +3583,7 @@
         </tr>
         
         <tr data-name="森下美怜">
+          <td style="width: 50px;"><div class="table-avatar-fallback">森</div></td>
           <td><strong>森下美怜</strong></td>
           <td>1</td>
           <td>2018-12-10</td>
@@ -3273,6 +3592,7 @@
         </tr>
         
         <tr data-name="前乃菜々">
+          <td style="width: 50px;"><div class="table-avatar-fallback">前</div></td>
           <td><strong>前乃菜々</strong></td>
           <td>1</td>
           <td>2020-10-11</td>
@@ -3281,6 +3601,7 @@
         </tr>
         
         <tr data-name="三浦歩美">
+          <td style="width: 50px;"><div class="table-avatar-fallback">三</div></td>
           <td><strong>三浦歩美</strong></td>
           <td>1</td>
           <td>2020-09-05</td>
@@ -3289,6 +3610,7 @@
         </tr>
         
         <tr data-name="ryo極">
+          <td style="width: 50px;"><div class="table-avatar-fallback">R</div></td>
           <td><strong>Ryo極</strong></td>
           <td>1</td>
           <td>2023-03-29</td>
@@ -3297,6 +3619,7 @@
         </tr>
         
         <tr data-name="小早川怜子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">小</div></td>
           <td><strong>小早川怜子</strong></td>
           <td>1</td>
           <td>2020-05-06</td>
@@ -3305,6 +3628,7 @@
         </tr>
         
         <tr data-name="長浜みつり">
+          <td style="width: 50px;"><div class="table-avatar-fallback">長</div></td>
           <td><strong>長浜みつり</strong></td>
           <td>1</td>
           <td>2024-02-09</td>
@@ -3313,6 +3637,7 @@
         </tr>
         
         <tr data-name="竿汁王子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">竿</div></td>
           <td><strong>竿汁王子</strong></td>
           <td>1</td>
           <td>2024-04-25</td>
@@ -3321,6 +3646,7 @@
         </tr>
         
         <tr data-name="河合あすな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">河</div></td>
           <td><strong>河合あすな</strong></td>
           <td>1</td>
           <td>2024-02-23</td>
@@ -3329,6 +3655,7 @@
         </tr>
         
         <tr data-name="梓ヒカリ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">梓</div></td>
           <td><strong>梓ヒカリ</strong></td>
           <td>1</td>
           <td>2024-03-22</td>
@@ -3337,6 +3664,7 @@
         </tr>
         
         <tr data-name="小花のん">
+          <td style="width: 50px;"><div class="table-avatar-fallback">小</div></td>
           <td><strong>小花のん</strong></td>
           <td>1</td>
           <td>2024-02-27</td>
@@ -3345,6 +3673,7 @@
         </tr>
         
         <tr data-name="マサルパンサー">
+          <td style="width: 50px;"><div class="table-avatar-fallback">マ</div></td>
           <td><strong>マサルパンサー</strong></td>
           <td>1</td>
           <td>2024-02-23</td>
@@ -3353,6 +3682,7 @@
         </tr>
         
         <tr data-name="石橋さとみ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">石</div></td>
           <td><strong>石橋さとみ</strong></td>
           <td>1</td>
           <td>2024-03-01</td>
@@ -3361,6 +3691,7 @@
         </tr>
         
         <tr data-name="音羽美玲">
+          <td style="width: 50px;"><div class="table-avatar-fallback">音</div></td>
           <td><strong>音羽美玲</strong></td>
           <td>1</td>
           <td>2018-10-11</td>
@@ -3369,6 +3700,7 @@
         </tr>
         
         <tr data-name="間壁f">
+          <td style="width: 50px;"><div class="table-avatar-fallback">間</div></td>
           <td><strong>間壁F</strong></td>
           <td>1</td>
           <td>2014-11-16</td>
@@ -3377,6 +3709,7 @@
         </tr>
         
         <tr data-name="芹沢つむぎ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">芹</div></td>
           <td><strong>芹沢つむぎ</strong></td>
           <td>1</td>
           <td>2014-03-10</td>
@@ -3385,6 +3718,7 @@
         </tr>
         
         <tr data-name="羽咲みはる">
+          <td style="width: 50px;"><div class="table-avatar-fallback">羽</div></td>
           <td><strong>羽咲みはる</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3393,6 +3727,7 @@
         </tr>
         
         <tr data-name="羽咲みはる">
+          <td style="width: 50px;"><div class="table-avatar-fallback">羽</div></td>
           <td><strong>羽咲みはる</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3401,6 +3736,7 @@
         </tr>
         
         <tr data-name="秋吉多恵子">
+          <td style="width: 50px;"><div class="table-avatar-fallback">秋</div></td>
           <td><strong>秋吉多恵子</strong></td>
           <td>1</td>
           <td>2018-08-13</td>
@@ -3409,6 +3745,7 @@
         </tr>
         
         <tr data-name="白鳥寿美礼">
+          <td style="width: 50px;"><div class="table-avatar-fallback">白</div></td>
           <td><strong>白鳥寿美礼</strong></td>
           <td>1</td>
           <td>2016-03-13</td>
@@ -3417,6 +3754,7 @@
         </tr>
         
         <tr data-name="熊谷麻美">
+          <td style="width: 50px;"><div class="table-avatar-fallback">熊</div></td>
           <td><strong>熊谷麻美</strong></td>
           <td>1</td>
           <td>2014-03-10</td>
@@ -3425,6 +3763,7 @@
         </tr>
         
         <tr data-name="氷馬サブロー">
+          <td style="width: 50px;"><div class="table-avatar-fallback">氷</div></td>
           <td><strong>氷馬サブロー</strong></td>
           <td>1</td>
           <td>2018-12-13</td>
@@ -3433,6 +3772,7 @@
         </tr>
         
         <tr data-name="橋本ありな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">橋</div></td>
           <td><strong>橋本ありな</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3441,6 +3781,7 @@
         </tr>
         
         <tr data-name="橋本ありな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">橋</div></td>
           <td><strong>橋本ありな</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3449,6 +3790,7 @@
         </tr>
         
         <tr data-name="架乃ゆら">
+          <td style="width: 50px;"><div class="table-avatar-fallback">架</div></td>
           <td><strong>架乃ゆら</strong></td>
           <td>1</td>
           <td>2023-07-21</td>
@@ -3457,6 +3799,7 @@
         </tr>
         
         <tr data-name="本郷愛">
+          <td style="width: 50px;"><div class="table-avatar-fallback">本</div></td>
           <td><strong>本郷愛</strong></td>
           <td>1</td>
           <td>2023-07-21</td>
@@ -3465,6 +3808,7 @@
         </tr>
         
         <tr data-name="木南日菜">
+          <td style="width: 50px;"><div class="table-avatar-fallback">木</div></td>
           <td><strong>木南日菜</strong></td>
           <td>1</td>
           <td>2014-11-16</td>
@@ -3473,6 +3817,7 @@
         </tr>
         
         <tr data-name="新名あみん">
+          <td style="width: 50px;"><div class="table-avatar-fallback">新</div></td>
           <td><strong>新名あみん</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3481,6 +3826,7 @@
         </tr>
         
         <tr data-name="新名あみん">
+          <td style="width: 50px;"><div class="table-avatar-fallback">新</div></td>
           <td><strong>新名あみん</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3489,6 +3835,7 @@
         </tr>
         
         <tr data-name="峰ゆり香">
+          <td style="width: 50px;"><div class="table-avatar-fallback">峰</div></td>
           <td><strong>峰ゆり香</strong></td>
           <td>1</td>
           <td>2018-10-11</td>
@@ -3497,6 +3844,7 @@
         </tr>
         
         <tr data-name="山岸逢花">
+          <td style="width: 50px;"><div class="table-avatar-fallback">山</div></td>
           <td><strong>山岸逢花</strong></td>
           <td>1</td>
           <td>2023-08-15</td>
@@ -3505,6 +3853,7 @@
         </tr>
         
         <tr data-name="小島みなみ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">小</div></td>
           <td><strong>小島みなみ</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3513,6 +3862,7 @@
         </tr>
         
         <tr data-name="小島みなみ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">小</div></td>
           <td><strong>小島みなみ</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3521,6 +3871,7 @@
         </tr>
         
         <tr data-name="宮崎由麻">
+          <td style="width: 50px;"><div class="table-avatar-fallback">宮</div></td>
           <td><strong>宮崎由麻</strong></td>
           <td>1</td>
           <td>2016-03-13</td>
@@ -3529,6 +3880,7 @@
         </tr>
         
         <tr data-name="安齋らら">
+          <td style="width: 50px;"><div class="table-avatar-fallback">安</div></td>
           <td><strong>安齋らら</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3537,6 +3889,7 @@
         </tr>
         
         <tr data-name="天使もえ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">天</div></td>
           <td><strong>天使もえ</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3545,6 +3898,7 @@
         </tr>
         
         <tr data-name="大槻ひびき">
+          <td style="width: 50px;"><div class="table-avatar-fallback">大</div></td>
           <td><strong>大槻ひびき</strong></td>
           <td>1</td>
           <td>2020-06-09</td>
@@ -3553,6 +3907,7 @@
         </tr>
         
         <tr data-name="夕季ちとせ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">夕</div></td>
           <td><strong>夕季ちとせ</strong></td>
           <td>1</td>
           <td>2023-01-20</td>
@@ -3561,6 +3916,7 @@
         </tr>
         
         <tr data-name="吉高寧々">
+          <td style="width: 50px;"><div class="table-avatar-fallback">吉</div></td>
           <td><strong>吉高寧々</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3569,6 +3925,7 @@
         </tr>
         
         <tr data-name="吉高寧々">
+          <td style="width: 50px;"><div class="table-avatar-fallback">吉</div></td>
           <td><strong>吉高寧々</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3577,6 +3934,7 @@
         </tr>
         
         <tr data-name="吉沢明歩">
+          <td style="width: 50px;"><div class="table-avatar-fallback">吉</div></td>
           <td><strong>吉沢明歩</strong></td>
           <td>1</td>
           <td>2014-11-16</td>
@@ -3585,6 +3943,7 @@
         </tr>
         
         <tr data-name="凹style.">
+          <td style="width: 50px;"><div class="table-avatar-fallback">凹</div></td>
           <td><strong>凹style.</strong></td>
           <td>1</td>
           <td>2023-11-17</td>
@@ -3593,6 +3952,7 @@
         </tr>
         
         <tr data-name="伊賀まこ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">伊</div></td>
           <td><strong>伊賀まこ</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3601,6 +3961,7 @@
         </tr>
         
         <tr data-name="伊賀まこ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">伊</div></td>
           <td><strong>伊賀まこ</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3609,6 +3970,7 @@
         </tr>
         
         <tr data-name="三岳ゆうな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">三</div></td>
           <td><strong>三岳ゆうな</strong></td>
           <td>1</td>
           <td>2022-09-10</td>
@@ -3617,6 +3979,7 @@
         </tr>
         
         <tr data-name="三上悠亜">
+          <td style="width: 50px;"><div class="table-avatar-fallback">三</div></td>
           <td><strong>三上悠亜</strong></td>
           <td>1</td>
           <td>2020-07-16</td>
@@ -3625,6 +3988,7 @@
         </tr>
         
         <tr data-name="チク兄">
+          <td style="width: 50px;"><div class="table-avatar-fallback">チ</div></td>
           <td><strong>チク兄</strong></td>
           <td>1</td>
           <td>2023-04-14</td>
@@ -3633,6 +3997,7 @@
         </tr>
         
         <tr data-name="イージー松本">
+          <td style="width: 50px;"><div class="table-avatar-fallback">イ</div></td>
           <td><strong>イージー松本</strong></td>
           <td>1</td>
           <td>2022-07-05</td>
@@ -3641,6 +4006,7 @@
         </tr>
         
         <tr data-name="イナバール タイガー小堺">
+          <td style="width: 50px;"><div class="table-avatar-fallback">イ</div></td>
           <td><strong>イナバール タイガー小堺</strong></td>
           <td>1</td>
           <td>2023-07-21</td>
@@ -3649,6 +4015,7 @@
         </tr>
         
         <tr data-name="ささきうずまき">
+          <td style="width: 50px;"><div class="table-avatar-fallback">さ</div></td>
           <td><strong>ささきうずまき</strong></td>
           <td>1</td>
           <td>2023-08-31</td>
@@ -3657,6 +4024,7 @@
         </tr>
         
         <tr data-name="miru">
+          <td style="width: 50px;"><div class="table-avatar-fallback">m</div></td>
           <td><strong>miru</strong></td>
           <td>1</td>
           <td>2023-07-21</td>
@@ -3665,6 +4033,7 @@
         </tr>
         
         <tr data-name="yuu shinoda">
+          <td style="width: 50px;"><div class="table-avatar-fallback">Y</div></td>
           <td><strong>Yuu Shinoda</strong></td>
           <td>1</td>
           <td>2020-06-09</td>
@@ -3673,6 +4042,7 @@
         </tr>
         
         <tr data-name="iori kogawa">
+          <td style="width: 50px;"><div class="table-avatar-fallback">I</div></td>
           <td><strong>Iori Kogawa</strong></td>
           <td>1</td>
           <td>2020-06-09</td>
@@ -3681,6 +4051,7 @@
         </tr>
         
         <tr data-name="里美ゆりあ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">里</div></td>
           <td><strong>里美ゆりあ</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3689,6 +4060,7 @@
         </tr>
         
         <tr data-name="菊池建佑">
+          <td style="width: 50px;"><div class="table-avatar-fallback">菊</div></td>
           <td><strong>菊池建佑</strong></td>
           <td>1</td>
           <td>2022-12-15</td>
@@ -3697,6 +4069,7 @@
         </tr>
         
         <tr data-name="花音うらら">
+          <td style="width: 50px;"><div class="table-avatar-fallback">花</div></td>
           <td><strong>花音うらら</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3705,6 +4078,7 @@
         </tr>
         
         <tr data-name="花狩まい">
+          <td style="width: 50px;"><div class="table-avatar-fallback">花</div></td>
           <td><strong>花狩まい</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3713,6 +4087,7 @@
         </tr>
         
         <tr data-name="花沢ひまり">
+          <td style="width: 50px;"><div class="table-avatar-fallback">花</div></td>
           <td><strong>花沢ひまり</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3721,6 +4096,7 @@
         </tr>
         
         <tr data-name="美波もも">
+          <td style="width: 50px;"><div class="table-avatar-fallback">美</div></td>
           <td><strong>美波もも</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3729,6 +4105,7 @@
         </tr>
         
         <tr data-name="結城りの">
+          <td style="width: 50px;"><div class="table-avatar-fallback">結</div></td>
           <td><strong>結城りの</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3737,6 +4114,7 @@
         </tr>
         
         <tr data-name="穂花あいり">
+          <td style="width: 50px;"><div class="table-avatar-fallback">穂</div></td>
           <td><strong>穂花あいり</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3745,6 +4123,7 @@
         </tr>
         
         <tr data-name="白川ゆず">
+          <td style="width: 50px;"><div class="table-avatar-fallback">白</div></td>
           <td><strong>白川ゆず</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3753,6 +4132,7 @@
         </tr>
         
         <tr data-name="由愛可奈">
+          <td style="width: 50px;"><div class="table-avatar-fallback">由</div></td>
           <td><strong>由愛可奈</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3761,6 +4141,7 @@
         </tr>
         
         <tr data-name="瀬田一花">
+          <td style="width: 50px;"><div class="table-avatar-fallback">瀬</div></td>
           <td><strong>瀬田一花</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3769,6 +4150,7 @@
         </tr>
         
         <tr data-name="深田えいみ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">深</div></td>
           <td><strong>深田えいみ</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3777,6 +4159,7 @@
         </tr>
         
         <tr data-name="沙月由奈">
+          <td style="width: 50px;"><div class="table-avatar-fallback">沙</div></td>
           <td><strong>沙月由奈</strong></td>
           <td>1</td>
           <td>2012-07-13</td>
@@ -3785,6 +4168,7 @@
         </tr>
         
         <tr data-name="横宮七海">
+          <td style="width: 50px;"><div class="table-avatar-fallback">横</div></td>
           <td><strong>横宮七海</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3793,6 +4177,7 @@
         </tr>
         
         <tr data-name="樋口みつは">
+          <td style="width: 50px;"><div class="table-avatar-fallback">樋</div></td>
           <td><strong>樋口みつは</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3801,6 +4186,7 @@
         </tr>
         
         <tr data-name="椎名ゆな">
+          <td style="width: 50px;"><div class="table-avatar-fallback">椎</div></td>
           <td><strong>椎名ゆな</strong></td>
           <td>1</td>
           <td>2023-04-07</td>
@@ -3809,6 +4195,7 @@
         </tr>
         
         <tr data-name="椎名そら">
+          <td style="width: 50px;"><div class="table-avatar-fallback">椎</div></td>
           <td><strong>椎名そら</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3817,6 +4204,7 @@
         </tr>
         
         <tr data-name="根尾あかり">
+          <td style="width: 50px;"><div class="table-avatar-fallback">根</div></td>
           <td><strong>根尾あかり</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3825,6 +4213,7 @@
         </tr>
         
         <tr data-name="柊るい">
+          <td style="width: 50px;"><div class="table-avatar-fallback">柊</div></td>
           <td><strong>柊るい</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3833,6 +4222,7 @@
         </tr>
         
         <tr data-name="松本いちか">
+          <td style="width: 50px;"><div class="table-avatar-fallback">松</div></td>
           <td><strong>松本いちか</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3841,6 +4231,7 @@
         </tr>
         
         <tr data-name="東條なつ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">東</div></td>
           <td><strong>東條なつ</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3849,6 +4240,7 @@
         </tr>
         
         <tr data-name="本田のえる">
+          <td style="width: 50px;"><div class="table-avatar-fallback">本</div></td>
           <td><strong>本田のえる</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3857,6 +4249,7 @@
         </tr>
         
         <tr data-name="朝田ひまり">
+          <td style="width: 50px;"><div class="table-avatar-fallback">朝</div></td>
           <td><strong>朝田ひまり</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3865,6 +4258,7 @@
         </tr>
         
         <tr data-name="朝比奈ななせ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">朝</div></td>
           <td><strong>朝比奈ななせ</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3873,6 +4267,7 @@
         </tr>
         
         <tr data-name="星宮ゆのん">
+          <td style="width: 50px;"><div class="table-avatar-fallback">星</div></td>
           <td><strong>星宮ゆのん</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3881,6 +4276,7 @@
         </tr>
         
         <tr data-name="愛須心亜">
+          <td style="width: 50px;"><div class="table-avatar-fallback">愛</div></td>
           <td><strong>愛須心亜</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3889,6 +4285,7 @@
         </tr>
         
         <tr data-name="希咲那奈">
+          <td style="width: 50px;"><div class="table-avatar-fallback">希</div></td>
           <td><strong>希咲那奈</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3897,6 +4294,7 @@
         </tr>
         
         <tr data-name="川上奈々美">
+          <td style="width: 50px;"><div class="table-avatar-fallback">川</div></td>
           <td><strong>川上奈々美</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3905,6 +4303,7 @@
         </tr>
         
         <tr data-name="小泉ひなた">
+          <td style="width: 50px;"><div class="table-avatar-fallback">小</div></td>
           <td><strong>小泉ひなた</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3913,6 +4312,7 @@
         </tr>
         
         <tr data-name="奏音かのん">
+          <td style="width: 50px;"><div class="table-avatar-fallback">奏</div></td>
           <td><strong>奏音かのん</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3921,6 +4321,7 @@
         </tr>
         
         <tr data-name="堀沢茉由">
+          <td style="width: 50px;"><div class="table-avatar-fallback">堀</div></td>
           <td><strong>堀沢茉由</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3929,6 +4330,7 @@
         </tr>
         
         <tr data-name="南乃そら">
+          <td style="width: 50px;"><div class="table-avatar-fallback">南</div></td>
           <td><strong>南乃そら</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3937,6 +4339,7 @@
         </tr>
         
         <tr data-name="加瀬ななほ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">加</div></td>
           <td><strong>加瀬ななほ</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3945,6 +4348,7 @@
         </tr>
         
         <tr data-name="倉本すみれ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">倉</div></td>
           <td><strong>倉本すみれ</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3953,6 +4357,7 @@
         </tr>
         
         <tr data-name="佐藤エル">
+          <td style="width: 50px;"><div class="table-avatar-fallback">佐</div></td>
           <td><strong>佐藤エル</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3961,6 +4366,7 @@
         </tr>
         
         <tr data-name="佐伯由美香">
+          <td style="width: 50px;"><div class="table-avatar-fallback">佐</div></td>
           <td><strong>佐伯由美香</strong></td>
           <td>1</td>
           <td>2022-03-22</td>
@@ -3969,6 +4375,7 @@
         </tr>
         
         <tr data-name="佐久間恵美">
+          <td style="width: 50px;"><div class="table-avatar-fallback">佐</div></td>
           <td><strong>佐久間恵美</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3977,6 +4384,7 @@
         </tr>
         
         <tr data-name="伊織ひなの">
+          <td style="width: 50px;"><div class="table-avatar-fallback">伊</div></td>
           <td><strong>伊織ひなの</strong></td>
           <td>1</td>
           <td>2023-11-03</td>
@@ -3985,6 +4393,7 @@
         </tr>
         
         <tr data-name="今井夏帆">
+          <td style="width: 50px;"><div class="table-avatar-fallback">今</div></td>
           <td><strong>今井夏帆</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -3993,6 +4402,7 @@
         </tr>
         
         <tr data-name="五日市芽依">
+          <td style="width: 50px;"><div class="table-avatar-fallback">五</div></td>
           <td><strong>五日市芽依</strong></td>
           <td>1</td>
           <td>2023-11-03</td>
@@ -4001,6 +4411,7 @@
         </tr>
         
         <tr data-name="久留木玲">
+          <td style="width: 50px;"><div class="table-avatar-fallback">久</div></td>
           <td><strong>久留木玲</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -4009,6 +4420,7 @@
         </tr>
         
         <tr data-name="乃木蛍">
+          <td style="width: 50px;"><div class="table-avatar-fallback">乃</div></td>
           <td><strong>乃木蛍</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -4017,6 +4429,7 @@
         </tr>
         
         <tr data-name="三舩みすず">
+          <td style="width: 50px;"><div class="table-avatar-fallback">三</div></td>
           <td><strong>三舩みすず</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -4025,6 +4438,7 @@
         </tr>
         
         <tr data-name="三浦乃愛">
+          <td style="width: 50px;"><div class="table-avatar-fallback">三</div></td>
           <td><strong>三浦乃愛</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -4033,6 +4447,7 @@
         </tr>
         
         <tr data-name="ワッツあっぷ！大宮">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ワ</div></td>
           <td><strong>ワッツあっぷ！大宮</strong></td>
           <td>1</td>
           <td>2023-08-24</td>
@@ -4041,6 +4456,7 @@
         </tr>
         
         <tr data-name="アンナ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">ア</div></td>
           <td><strong>アンナ</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -4049,6 +4465,7 @@
         </tr>
         
         <tr data-name="さつき芽衣">
+          <td style="width: 50px;"><div class="table-avatar-fallback">さ</div></td>
           <td><strong>さつき芽衣</strong></td>
           <td>1</td>
           <td>2023-07-28</td>
@@ -4057,6 +4474,7 @@
         </tr>
         
         <tr data-name="立花瑠莉">
+          <td style="width: 50px;"><div class="table-avatar-fallback">立</div></td>
           <td><strong>立花瑠莉</strong></td>
           <td>1</td>
           <td>2018-12-22</td>
@@ -4065,6 +4483,7 @@
         </tr>
         
         <tr data-name="小澤マリア">
+          <td style="width: 50px;"><div class="table-avatar-fallback">小</div></td>
           <td><strong>小澤マリア</strong></td>
           <td>1</td>
           <td>2019-06-07</td>
@@ -4073,6 +4492,7 @@
         </tr>
         
         <tr data-name="安室なみ">
+          <td style="width: 50px;"><div class="table-avatar-fallback">安</div></td>
           <td><strong>安室なみ</strong></td>
           <td>1</td>
           <td>2023-01-07</td>
