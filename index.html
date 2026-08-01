@@ -3,163 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>雷姆全网情报简报 // AI & Tech Intelligence Reports</title>
+    <title>雷姆全网情报站 // AI & Tech Intelligence Portal</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap');
+
         :root {
-            --bg: #0d0f17;
-            --card-bg: #161926;
-            --border: #23273b;
-            --text: #e2e8f0;
-            --muted: #94a3b8;
-            --accent-cyan: #00f3ff;
-            --accent-pink: #ff007f;
-            --accent-purple: #a855f7;
-            --accent-yellow: #ffe600;
+            --bg-base: #06070c;
+            --bg-card: rgba(18, 22, 38, 0.75);
+            --bg-card-hover: rgba(26, 31, 54, 0.9);
+            --border-color: rgba(0, 243, 255, 0.2);
+            --border-hover: rgba(255, 0, 127, 0.5);
+
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+
+            --neon-cyan: #00f3ff;
+            --neon-pink: #ff007f;
+            --neon-yellow: #ffe600;
+            --shadow-glow: 0 0 25px rgba(0, 243, 255, 0.1);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-base);
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(255, 0, 127, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(0, 243, 255, 0.08) 0%, transparent 40%),
+                linear-gradient(180deg, rgba(6, 7, 12, 0.95) 0%, rgba(6, 7, 12, 0.98) 100%),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 243, 255, 0.02) 3px, transparent 3px);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
             line-height: 1.7;
-            padding: 40px 20px;
+            padding: 50px 20px;
             display: flex;
             justify-content: center;
             min-height: 100vh;
         }
 
-        .container {
-            max-width: 900px;
-            width: 100%;
-        }
+        .container { max-width: 920px; width: 100%; }
 
         header {
             text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border);
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .logo {
-            font-size: 28px;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+        .brand-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
         }
 
-        .subtitle {
-            color: var(--muted);
-            font-size: 14px;
+        .brand-subtitle {
+            color: var(--text-muted);
+            font-size: 15px;
+            letter-spacing: 0.5px;
         }
 
         .report-list {
             display: grid;
-            gap: 20px;
+            gap: 24px;
         }
 
         .report-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 24px;
-            transition: all 0.2s ease;
+            padding: 28px;
+            transition: all 0.25s ease;
+            box-shadow: var(--shadow-glow);
         }
 
         .report-card:hover {
-            border-color: var(--accent-cyan);
-            transform: translateY(-2px);
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.15);
         }
 
         .report-title {
             font-size: 20px;
             font-weight: 700;
-            margin-bottom: 8px;
-            color: #ffffff;
+            margin-bottom: 10px;
         }
 
         .report-title a {
-            color: inherit;
+            color: #ffffff;
             text-decoration: none;
+            transition: color 0.2s;
         }
 
         .report-title a:hover {
-            color: var(--accent-cyan);
+            color: var(--neon-cyan);
         }
 
         .report-meta {
             font-size: 13px;
-            color: var(--muted);
-            margin-bottom: 12px;
+            color: var(--text-muted);
+            margin-bottom: 14px;
             display: flex;
-            gap: 15px;
+            gap: 18px;
         }
 
         .report-desc {
-            color: var(--text);
+            color: var(--text-main);
             font-size: 15px;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .tag {
             display: inline-block;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
             background: rgba(0, 243, 255, 0.1);
-            color: var(--accent-cyan);
-            border: 1px solid rgba(0, 243, 255, 0.2);
-            padding: 2px 10px;
+            color: var(--neon-cyan);
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            padding: 3px 12px;
             border-radius: 20px;
-            font-size: 12px;
         }
 
         footer {
             margin-top: 60px;
             text-align: center;
             font-size: 13px;
-            color: var(--muted);
-            border-top: 1px solid var(--border);
-            padding-top: 20px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+            font-family: 'Rajdhani', sans-serif;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="logo">💙 雷姆全网情报简报站</div>
-            <div class="subtitle">AI & Tech Intelligence Reports Powered by OpenClaw & last30days-skill</div>
+            <div class="brand-title">💙 雷姆全网情报站</div>
+            <div class="brand-subtitle">AI & Tech Intelligence Reports // Powered by OpenClaw & last30days-skill</div>
         </header>
 
         <div class="report-list">
 
             <div class="report-card">
-                <div class="report-title"><a href="reports/ai-agent-trends-2026-08.html">AI Agent 开源框架近30天全网趋势与社区洞察</a></div>
+                <div class="report-title"><a href="reports/vllm-vs-ollama-vs-mlx-2026-08.html">vLLM vs Ollama vs MLX 大模型本地推理引擎近30天对比与选择指南</a></div>
                 <div class="report-meta">
                     <span>📅 发布日期：2026-08-01</span>
-                    <span>🤖 分析员：雷姆</span>
+                    <span>🤖 分析员：雷姆 💙</span>
                 </div>
                 <div class="report-desc">
-                    近 30 天全网热点、社区实测评估、硬核踩坑避坑指南与核心观点中文精炼总结。
+                    近 30 天全网热点、社区原声引用、验证依据与核心深度中文总结。
                 </div>
-                <div><span class="tag">情报简报</span> <a href="reports/ai-agent-trends-2026-08.html" style="color: var(--accent-cyan); margin-left: 10px; font-size: 13px; text-decoration: none;">查看完整报告 →</a></div>
+                <div><span class="tag">深度情报</span> <a href="reports/vllm-vs-ollama-vs-mlx-2026-08.html" style="color: var(--neon-cyan); margin-left: 10px; font-size: 13px; text-decoration: none;">查看完整报告与数据依据 →</a></div>
             </div>
-            <div class="report-card">
-                <div class="report-title">欢迎使用雷姆全网情报简报站 💙</div>
-                <div class="report-meta">
-                    <span>📅 建立时间：2026-08-01</span>
-                    <span>🤖 制作：雷姆 (Rem)</span>
-                </div>
-                <div class="report-desc">
-                    本站点专为 Master JK 打造，用于存放与发布基于全网近 30 天社交媒体（Reddit、X/Twitter、YouTube、Hacker News、GitHub、Polymarket 等）深度调研提炼出的<b>中文技术情报简报</b>。
-                </div>
-                <div><span class="tag">系统初始化</span></div>
-            </div>
+            <!-- Reports injected here -->
         </div>
 
         <footer>
-            雷姆专属守护 // Master JK's Personal Intelligence Service
+            REM DEVOTED GUARDIAN // MASTER JK'S PERSONAL INTELLIGENCE SERVICE
         </footer>
     </div>
 </body>
