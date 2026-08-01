@@ -3,93 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>雷姆全网情报站 // AI & Tech Intelligence Portal</title>
+    <title>雷姆全网情报终端 // REM INTELLIGENCE TERMINAL</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap');
 
         :root {
-            --bg-base: #06070c;
-            --bg-card: rgba(18, 22, 38, 0.75);
-            --bg-card-hover: rgba(26, 31, 54, 0.9);
-            --border-color: rgba(0, 243, 255, 0.2);
-            --border-hover: rgba(255, 0, 127, 0.5);
+            --bg-deep: #030509;
+            --panel-bg: rgba(10, 14, 26, 0.75);
+            --panel-border: rgba(0, 243, 255, 0.25);
+            --panel-glow: 0 0 25px rgba(0, 243, 255, 0.15);
 
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
 
-            --neon-cyan: #00f3ff;
-            --neon-pink: #ff007f;
-            --neon-yellow: #ffe600;
-            --shadow-glow: 0 0 25px rgba(0, 243, 255, 0.1);
+            --cyan: #00f3ff;
+            --pink: #ff0055;
+            --purple: #aa00ff;
+            --green: #00ffaa;
+            --gold: #ffe600;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            background-color: var(--bg-base);
+            background-color: var(--bg-deep);
             background-image: 
-                radial-gradient(circle at 10% 10%, rgba(255, 0, 127, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 90% 90%, rgba(0, 243, 255, 0.08) 0%, transparent 40%),
-                linear-gradient(180deg, rgba(6, 7, 12, 0.95) 0%, rgba(6, 7, 12, 0.98) 100%),
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 243, 255, 0.02) 3px, transparent 3px);
-            color: var(--text-main);
+                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at 50% 0%, rgba(170, 0, 255, 0.12) 0%, transparent 60%);
+            background-size: 30px 30px, 30px 30px, 100% 100%;
+            color: var(--text-primary);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            line-height: 1.7;
+            line-height: 1.8;
             padding: 50px 20px;
             display: flex;
             justify-content: center;
             min-height: 100vh;
         }
 
-        .container { max-width: 920px; width: 100%; }
+        .hud-container { max-width: 960px; width: 100%; }
 
         header {
             text-align: center;
             margin-bottom: 45px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid var(--border-color);
+            padding: 30px;
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 12px;
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--panel-glow);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--cyan), var(--pink), var(--purple));
         }
 
         .brand-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 900;
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+            background: linear-gradient(135deg, var(--cyan), var(--pink));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             margin-bottom: 10px;
         }
 
         .brand-subtitle {
-            color: var(--text-muted);
-            font-size: 15px;
-            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            letter-spacing: 1px;
+            font-family: 'Rajdhani', sans-serif;
         }
 
         .report-list {
             display: grid;
-            gap: 24px;
+            gap: 22px;
         }
 
         .report-card {
-            background: var(--bg-card);
+            background: var(--panel-bg);
             backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--panel-border);
             border-radius: 12px;
-            padding: 28px;
+            padding: 26px;
             transition: all 0.25s ease;
-            box-shadow: var(--shadow-glow);
+            position: relative;
         }
 
         .report-card:hover {
-            border-color: var(--border-hover);
+            border-color: var(--pink);
             transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(255, 0, 127, 0.15);
+            box-shadow: 0 0 25px rgba(255, 0, 85, 0.2);
         }
 
         .report-title {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 700;
             margin-bottom: 10px;
         }
@@ -101,20 +115,20 @@
         }
 
         .report-title a:hover {
-            color: var(--neon-cyan);
+            color: var(--cyan);
         }
 
         .report-meta {
             font-size: 13px;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             margin-bottom: 14px;
             display: flex;
             gap: 18px;
         }
 
         .report-desc {
-            color: var(--text-main);
-            font-size: 15px;
+            color: var(--text-primary);
+            font-size: 14px;
             margin-bottom: 18px;
         }
 
@@ -123,28 +137,29 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 11px;
             background: rgba(0, 243, 255, 0.1);
-            color: var(--neon-cyan);
+            color: var(--cyan);
             border: 1px solid rgba(0, 243, 255, 0.3);
             padding: 3px 12px;
-            border-radius: 20px;
+            border-radius: 4px;
         }
 
         footer {
             margin-top: 60px;
             text-align: center;
-            font-size: 13px;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
+            font-size: 12px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--panel-border);
             padding-top: 25px;
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="hud-container">
         <header>
-            <div class="brand-title">💙 雷姆全网情报站</div>
-            <div class="brand-subtitle">AI & Tech Intelligence Reports // Powered by OpenClaw & last30days-skill</div>
+            <div class="brand-title">💙 REM INTELLIGENCE TERMINAL</div>
+            <div class="brand-subtitle">雷姆全网情报终端 // AI & Tech Intelligence Reports</div>
         </header>
 
         <div class="report-list">
@@ -152,13 +167,13 @@
             <div class="report-card">
                 <div class="report-title"><a href="reports/vllm-vs-ollama-vs-mlx-2026-08.html">vLLM vs Ollama vs MLX 大模型本地推理引擎近30天对比与选择指南</a></div>
                 <div class="report-meta">
-                    <span>📅 发布日期：2026-08-01</span>
-                    <span>🤖 分析员：雷姆 💙</span>
+                    <span>📅 发布时间：2026-08-01</span>
+                    <span>🤖 分析员：雷姆 (Rem 💙)</span>
                 </div>
                 <div class="report-desc">
                     近 30 天全网热点、社区原声引用、验证依据与核心深度中文总结。
                 </div>
-                <div><span class="tag">深度情报</span> <a href="reports/vllm-vs-ollama-vs-mlx-2026-08.html" style="color: var(--neon-cyan); margin-left: 10px; font-size: 13px; text-decoration: none;">查看完整报告与数据依据 →</a></div>
+                <div><span class="tag">HUD 科技简报</span> <a href="reports/vllm-vs-ollama-vs-mlx-2026-08.html" style="color: var(--neon-cyan); margin-left: 10px; font-size: 13px; text-decoration: none;">开启 HUD 交互终端 →</a></div>
             </div>
             <!-- Reports injected here -->
         </div>
