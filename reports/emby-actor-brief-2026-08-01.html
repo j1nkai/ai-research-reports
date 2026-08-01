@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🌸 深夜图书馆 · 演员动态与新番简报</title>
+  <title>🍑 深夜图书馆 · 演员动态与新番简报</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap');
     :root {
@@ -45,7 +45,7 @@
       box-shadow: var(--shadow); backdrop-filter: blur(16px); padding: 38px;
       overflow: hidden; position: relative;
     }
-    .hero::after { content: '🌸'; position: absolute; right: 30px; top: 22px; font-size: 54px; opacity: .35; transform: rotate(12deg); }
+    .hero::after { content: '🍑'; position: absolute; right: 30px; top: 22px; font-size: 54px; opacity: .35; transform: rotate(12deg); }
     .eyebrow { display: inline-flex; gap: 8px; align-items: center; background: var(--mint-soft); color: #28746a; border: 1px solid rgba(139,211,199,.45); padding: 6px 12px; border-radius: 999px; font-weight: 700; font-size: 13px; }
     h1 { margin-top: 16px; font-size: clamp(30px, 5vw, 54px); line-height: 1.08; font-weight: 900; letter-spacing: -0.04em; }
     .grad { background: linear-gradient(120deg, #ff6b9a, #33b8a6 58%, #4aa8d8); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -94,6 +94,15 @@
     .actor-chip, .code-chip { display:inline-flex; margin: 0 6px 6px 0; padding: 3px 8px; border-radius: 999px; font-size: 11px; font-weight: 800; }
     .actor-chip { color:#28746a; background: var(--mint-soft); }
     .code-chip { color:#b04b68; background: var(--sakura-soft); }
+    .rec-grid { display:grid; grid-template-columns: 1fr; gap: 12px; }
+    .rec-card { border: 1px solid var(--line); border-radius: 18px; padding: 15px; background: rgba(255,255,255,.62); }
+    .rec-card.film { background: linear-gradient(135deg, rgba(255,227,236,.72), rgba(227,246,242,.78)); }
+    .rec-kicker { color:#d95d7d; font-size: 12px; font-weight: 900; letter-spacing: .08em; margin-bottom: 6px; }
+    .rec-card h3 { font-size: 19px; line-height: 1.25; font-weight: 900; }
+    .rec-title { margin-top: 8px; color: #45616a; font-size: 13px; line-height: 1.65; }
+    .reason { margin-top: 8px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+    .watch-btn { display:inline-flex; align-items:center; gap: 6px; text-decoration:none; color:#fff; background: linear-gradient(135deg, #ff6b9a, #33b8a6); border: 0; padding: 8px 13px; border-radius: 999px; font-size: 13px; font-weight: 900; box-shadow: 0 10px 22px rgba(255,107,154,.22); }
+    .status-chip { display:inline-flex; align-items:center; color:#b04b68; background: var(--sakura-soft); border: 1px solid rgba(255,143,171,.28); padding: 5px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; }
     .toolbar { display:flex; justify-content: space-between; gap: 14px; align-items:center; margin-bottom: 14px; }
     .search { width: min(430px, 100%); border: 1px solid var(--line); background: rgba(255,255,255,.85); border-radius: 999px; padding: 12px 16px; font: inherit; outline: none; }
     .search:focus { border-color: var(--mint); box-shadow: 0 0 0 4px rgba(139,211,199,.18); }
@@ -112,14 +121,14 @@
     <header class="hero">
       <div class="eyebrow">🌿 Emby Local Intelligence · Japanese Fresh Brief</div>
       <h1><span class="grad">深夜图书馆</span><br>演员动态与新番简报</h1>
-      <p class="subtitle">雷姆已在后台遍历主人的 Emby 演员库，并使用 JavBus 补充重点演员的新番/最新作品线索。页面不包含 API Key 或内网路径，适合发布到情报站。</p>
+      <p class="subtitle">雷姆已在后台遍历主人的 Emby 演员库，使用 JavBus 补充重点演员新番，并结合库存浓度给出女优/片子推荐与 MissAV 观看链接。页面不包含 API Key 或内网路径，适合发布到情报站。</p>
       <div class="stats">
         <div class="stat"><span>演员总数</span><strong>408</strong></div>
         <div class="stat"><span>关联作品</span><strong>916</strong></div>
         <div class="stat"><span>有作品演员</span><strong>408</strong></div>
         <div class="stat"><span>动态检索人数</span><strong>21</strong></div>
       </div>
-      <div class="note">生成时间：2026-08-01T10:27:37+08:00 · 数据源：Emby 本地 API + JavBus 公开检索</div>
+      <div class="note">生成时间：2026-08-01T10:27:37+08:00 · 数据源：Emby 本地 API + JavBus 公开检索 + MissAV 观看链接</div>
     </header>
 
     <section>
@@ -141,7 +150,7 @@
           </div>
           <div class="links-row"><span class="muted">无外部档案链接</span></div>
           <details class="news-box">
-            <summary>🌷 JavBus 新番 / 最新作品</summary>
+            <summary>🍑 JavBus 新番 / 最新作品</summary>
             <div class="news-empty">近30天未检索到足够可靠的公开新消息。</div>
           </details>
         </article>
@@ -162,7 +171,7 @@
           </div>
           <div class="links-row"><span class="muted">无外部档案链接</span></div>
           <details class="news-box">
-            <summary>🌷 JavBus 新番 / 最新作品</summary>
+            <summary>🍑 JavBus 新番 / 最新作品</summary>
             <div class="news-empty">近30天未检索到足够可靠的公开新消息。</div>
           </details>
         </article>
@@ -191,7 +200,7 @@
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:33901" target="_blank" rel="noopener noreferrer">MetaTube</a></div>
           <details class="news-box">
-            <summary>🌷 JavBus 新番 / 最新作品</summary>
+            <summary>🍑 JavBus 新番 / 最新作品</summary>
             <ul class="news-list"><li><a href="https://www.javbus.com/JUR-758" target="_blank" rel="noopener noreferrer">JUR-758｜「ねぇ、何でさっきしてくれなかったの？」 酔ってキス魔に変貌したパワハラ女上司 時間も場所も忘れて朝まで舐め合い不倫性交に溺れた 愛弓りょう</a><span class="news-meta">2026-07-24 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/JUR-734" target="_blank" rel="noopener noreferrer">JUR-734｜性欲が強過ぎる彼女の母がどストライクな僕は、彼女に内緒で何度も何度も勃起チ○ポを捧げています…。 愛弓りょう</a><span class="news-meta">2026-06-19 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/JUR-708" target="_blank" rel="noopener noreferrer">JUR-708｜吹き出る汗、吹き飛ぶ理性―。 宙に浮くほどイキ飛び跳ねる、真夏の大痙攣エビ反り不倫SEX。 愛弓りょう</a><span class="news-meta">2026-05-21 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
@@ -212,7 +221,7 @@
           </div>
           <div class="links-row"><span class="muted">无外部档案链接</span></div>
           <details class="news-box">
-            <summary>🌷 JavBus 新番 / 最新作品</summary>
+            <summary>🍑 JavBus 新番 / 最新作品</summary>
             <div class="news-empty">近30天未检索到足够可靠的公开新消息。</div>
           </details>
         </article>
@@ -241,7 +250,7 @@
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:9657" target="_blank" rel="noopener noreferrer">MetaTube</a></div>
           <details class="news-box">
-            <summary>🌷 JavBus 新番 / 最新作品</summary>
+            <summary>🍑 JavBus 新番 / 最新作品</summary>
             <ul class="news-list"><li><a href="https://www.javbus.com/SNOS-199" target="_blank" rel="noopener noreferrer">SNOS-199｜就職した水着メーカーは女性社員が水着姿の世界。勃起してもHカップの教育担当・夢乃さんが抜いてくれるのでボクの金玉は毎日カラッポ 夢乃あいか</a><span class="news-meta">2026-04-23 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-159" target="_blank" rel="noopener noreferrer">SNOS-159｜人生…返してください…性接待、枕営業、ルッキズム文化…女子アナを襲った闇深い強要レ×プ証拠VTRをご覧ください。 夢乃あいか</a><span class="news-meta">2026-03-19 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-072" target="_blank" rel="noopener noreferrer">SNOS-072｜媚薬がすぐ効くあいかちゃんのお風呂の水をほぼ媚薬にしてみた！（プールも）そしたらやっばいガンギメセク！ 夢乃あいか</a><span class="news-meta">2026-01-22 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
@@ -268,7 +277,7 @@
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:35222" target="_blank" rel="noopener noreferrer">MetaTube</a></div>
           <details class="news-box">
-            <summary>🌷 JavBus 新番 / 最新作品</summary>
+            <summary>🍑 JavBus 新番 / 最新作品</summary>
             <ul class="news-list"><li><a href="https://www.javbus.com/OFES-011" target="_blank" rel="noopener noreferrer">OFES-011｜派遣マッサージ師にきわどい秘部を触られすぎて、快楽に耐え切れず寝取られました。 庵ひめか</a><span class="news-meta">2025-07-25 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/JUR-305" target="_blank" rel="noopener noreferrer">JUR-305｜寝取らせ串刺し輪● 愛する妻を深奥まで犯し尽くして下さい―。 庵ひめか</a><span class="news-meta">2025-06-06 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/URE-122" target="_blank" rel="noopener noreferrer">URE-122｜原作:師走の翁 人妻催●コンビニ肉便器 カルト的人気同人作品が ついに完全実写化！！ 巨乳妻を常識改変！！ 職場限定オナホとして 公衆便所肉穴に特別採用！！ 庵ひめか</a><span class="news-meta">2025-05-09 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
@@ -295,7 +304,7 @@
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:9482" target="_blank" rel="noopener noreferrer">MetaTube</a></div>
           <details class="news-box">
-            <summary>🌷 JavBus 新番 / 最新作品</summary>
+            <summary>🍑 JavBus 新番 / 最新作品</summary>
             <ul class="news-list"><li><a href="https://www.javbus.com/BIBIVR-169" target="_blank" rel="noopener noreferrer">BIBIVR-169｜【VR】都内某所にあるハメ放題のセクシーラウンジで人生終了するくらい金も精子も注ぎ込み！！たっぷりじゅぽじゅぽW責め 弥生みづき 末広純</a><span class="news-meta">2026-07-02 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SAVR-1111" target="_blank" rel="noopener noreferrer">SAVR-1111｜【VR】高級デリ嬢をキメセクで堕とす！自らのルックスとテクニックを自慢してくる生意気本指No.1に媚薬を仕込んで連続アクメで徹底的に追い込んでみた。 弥生みづき</a><span class="news-meta">2026-06-24 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SAVR-1042" target="_blank" rel="noopener noreferrer">SAVR-1042｜【VR】担任のみづき先生が生徒の将来を見据えて予告無しに射精耐久力を測りに来る抜き打ちSEX 弥生みづき</a><span class="news-meta">2026-05-02 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
@@ -324,7 +333,7 @@
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:2098" target="_blank" rel="noopener noreferrer">MetaTube</a></div>
           <details class="news-box">
-            <summary>🌷 JavBus 新番 / 最新作品</summary>
+            <summary>🍑 JavBus 新番 / 最新作品</summary>
             <ul class="news-list"><li><a href="https://www.javbus.com/MFYD-139" target="_blank" rel="noopener noreferrer">MFYD-139｜S1×TAMEIKE20周年記念コラボ作品 田舎に帰省してきた発情期痴女（兄嫁）とドロドロSEXをしたあの夏ー。【汗だくだく、ザーメンドクドク】 奥田咲</a><span class="news-meta">2026-05-14 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-153" target="_blank" rel="noopener noreferrer">SNOS-153｜むっちり巨乳で強●ボッキさせてそのままズッポリ 性欲モンスター奥様の入れ喰い露出おっぱい逆ナンパ 奥田咲</a><span class="news-meta">2026-03-05 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-082" target="_blank" rel="noopener noreferrer">SNOS-082｜彼女のマッマが女性ホルモン真っ盛りで僕のチ●ポを横取り挿入マ●コ 奥田咲</a><span class="news-meta">2026-02-05 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
@@ -345,7 +354,7 @@
           </div>
           <div class="links-row"><span class="muted">无外部档案链接</span></div>
           <details class="news-box">
-            <summary>🌷 JavBus 新番 / 最新作品</summary>
+            <summary>🍑 JavBus 新番 / 最新作品</summary>
             <div class="news-empty">近30天未检索到足够可靠的公开新消息。</div>
           </details>
         </article>
@@ -374,7 +383,7 @@
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:4368" target="_blank" rel="noopener noreferrer">MetaTube</a> <a class="pill-link" href="https://www.themoviedb.org/person/5901602" target="_blank" rel="noopener noreferrer">TheMovieDb</a></div>
           <details class="news-box">
-            <summary>🌷 JavBus 新番 / 最新作品</summary>
+            <summary>🍑 JavBus 新番 / 最新作品</summary>
             <ul class="news-list"><li><a href="https://www.javbus.com/MXGS-224_2026-04-15" target="_blank" rel="noopener noreferrer">MXGS-224｜【AIリマスター版】淫乱感染病棟 第三章 佐山愛</a><span class="news-meta">2026-04-15 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/DV-901_2026-03-26" target="_blank" rel="noopener noreferrer">DV-901｜【AIリマスター版】平成生まれAV女優≪佐山愛≫の素人男優オーディション</a><span class="news-meta">2026-03-26 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/MXGS-172_2025-12-15" target="_blank" rel="noopener noreferrer">MXGS-172｜【AIリマスター版】俺の嫁、愛（ラブ）。 佐山愛</a><span class="news-meta">2025-12-15 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
@@ -403,7 +412,7 @@
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:8149" target="_blank" rel="noopener noreferrer">MetaTube</a></div>
           <details class="news-box">
-            <summary>🌷 JavBus 新番 / 最新作品</summary>
+            <summary>🍑 JavBus 新番 / 最新作品</summary>
             <ul class="news-list"><li><a href="https://www.javbus.com/JYMA-108" target="_blank" rel="noopener noreferrer">JYMA-108｜夫が出張中に欲情して男達のチ○ポを喰い漁る 爆乳尻オナホ妻 マゾ痴女のドスケベ嫁が肉感ボディでイキまくる 松本菜奈実</a><span class="news-meta">2026-06-19 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/AVSA-432" target="_blank" rel="noopener noreferrer">AVSA-432｜逆バニー美爆乳レイヤー オフ会サークルの男達とデカパイを揺らし生ハメしまくってザーメンぶっかけ輪交中出しSEX！！ 松本菜奈実</a><span class="news-meta">2026-05-08 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/NACT-122" target="_blank" rel="noopener noreferrer">NACT-122｜連鎖NTR 繰り返す寝取り寝取られ 松本菜奈実</a><span class="news-meta">2026-05-04 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
@@ -432,7 +441,7 @@
           </div>
           <div class="links-row"><a class="pill-link" href="192.168.100.25:8080?redirect=AV-LEAGUE:32740" target="_blank" rel="noopener noreferrer">MetaTube</a></div>
           <details class="news-box">
-            <summary>🌷 JavBus 新番 / 最新作品</summary>
+            <summary>🍑 JavBus 新番 / 最新作品</summary>
             <ul class="news-list"><li><a href="https://www.javbus.com/OFES-046" target="_blank" rel="noopener noreferrer">OFES-046｜10年ぶりに帰省した実家に引きこもるアラサーニート姉がだらしなさ過ぎてシコい 鷲尾めい</a><span class="news-meta">2026-06-26 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-254" target="_blank" rel="noopener noreferrer">SNOS-254｜兄貴、ごめん！デリヘル呼んだらお義姉さんが… Lカップ爆乳があまりにも最高過ぎてご無沙汰ザコマ○コを激突きしまくって最高のメス嫁に開発しといたよw 鷲尾めい</a><span class="news-meta">2026-05-21 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li><li><a href="https://www.javbus.com/SNOS-170" target="_blank" rel="noopener noreferrer">SNOS-170｜Lカップ爆乳でいつでもどこでも挟んでヌケる使い放題フリーおっぱい秘書 鷲尾めい</a><span class="news-meta">2026-04-23 · JavBus 新番</span><p>JavBus 新番/最新作品候选；按搜索页日期倒序截取。</p></li></ul>
           </details>
         </article>
@@ -646,6 +655,156 @@
     </ul></div>
       </div>
     </section>
+
+    
+    <section>
+      <div class="section-title"><span class="dot"></span>雷姆私房推荐 · 结合主人库存口味</div>
+      <div class="two-col">
+        <div class="panel"><h3>🍑 可能喜欢的女优</h3><div class="rec-grid">
+        <div class="rec-card">
+          <div class="rec-kicker">女优推荐</div>
+          <h3>きとるね川口</h3>
+          <p class="reason">库存浓度 30 部；常看前缀 JUQ / CJOD / EBWH；JavBus 近期动态 暂无。</p>
+          <div class="links-row">
+            <a class="pill-link" href="https://www.javbus.com/search/%E3%81%8D%E3%81%A8%E3%82%8B%E3%81%AD%E5%B7%9D%E5%8F%A3" target="_blank" rel="noopener noreferrer">JavBus 演员检索</a>
+            <span class="status-chip">库存 30 部</span>
+          </div>
+        </div>
+        
+        <div class="rec-card">
+          <div class="rec-kicker">女优推荐</div>
+          <h3>愛弓りょう</h3>
+          <p class="reason">库存浓度 16 部；常看前缀 JUQ / JUL；JavBus 近期动态 2026-07-24。</p>
+          <div class="links-row">
+            <a class="pill-link" href="https://www.javbus.com/search/%E6%84%9B%E5%BC%93%E3%82%8A%E3%82%87%E3%81%86" target="_blank" rel="noopener noreferrer">JavBus 演员检索</a>
+            <span class="status-chip">库存 16 部</span>
+          </div>
+        </div>
+        
+        <div class="rec-card">
+          <div class="rec-kicker">女优推荐</div>
+          <h3>豆沢豆太郎</h3>
+          <p class="reason">库存浓度 16 部；常看前缀 JUR / JUQ / EBWH；JavBus 近期动态 暂无。</p>
+          <div class="links-row">
+            <a class="pill-link" href="https://www.javbus.com/search/%E8%B1%86%E6%B2%A2%E8%B1%86%E5%A4%AA%E9%83%8E" target="_blank" rel="noopener noreferrer">JavBus 演员检索</a>
+            <span class="status-chip">库存 16 部</span>
+          </div>
+        </div>
+        
+        <div class="rec-card">
+          <div class="rec-kicker">女优推荐</div>
+          <h3>肉尊</h3>
+          <p class="reason">库存浓度 12 部；常看前缀 JUQ / EBWH / SONE；JavBus 近期动态 暂无。</p>
+          <div class="links-row">
+            <a class="pill-link" href="https://www.javbus.com/search/%E8%82%89%E5%B0%8A" target="_blank" rel="noopener noreferrer">JavBus 演员检索</a>
+            <span class="status-chip">库存 12 部</span>
+          </div>
+        </div>
+        
+        <div class="rec-card">
+          <div class="rec-kicker">女优推荐</div>
+          <h3>弥生みづき</h3>
+          <p class="reason">库存浓度 11 部；常看前缀 DASS / JUFE / CAWD；JavBus 近期动态 2026-07-02。</p>
+          <div class="links-row">
+            <a class="pill-link" href="https://www.javbus.com/search/%E5%BC%A5%E7%94%9F%E3%81%BF%E3%81%A5%E3%81%8D" target="_blank" rel="noopener noreferrer">JavBus 演员检索</a>
+            <span class="status-chip">库存 11 部</span>
+          </div>
+        </div>
+        
+        <div class="rec-card">
+          <div class="rec-kicker">女优推荐</div>
+          <h3>夢乃あいか</h3>
+          <p class="reason">库存浓度 11 部；常看前缀 SSIS / SONE / SNIS；JavBus 近期动态 2026-04-23。</p>
+          <div class="links-row">
+            <a class="pill-link" href="https://www.javbus.com/search/%E5%A4%A2%E4%B9%83%E3%81%82%E3%81%84%E3%81%8B" target="_blank" rel="noopener noreferrer">JavBus 演员检索</a>
+            <span class="status-chip">库存 11 部</span>
+          </div>
+        </div>
+        </div></div>
+        <div class="panel"><h3>🍑 推荐片子 · MissAV 观看</h3><div class="rec-grid">
+        <div class="rec-card film">
+          <div class="rec-kicker">2026-07-24 · 新番候选</div>
+          <h3>JUR-758</h3>
+          <p class="rec-title">「ねぇ、何でさっきしてくれなかったの？」 酔ってキス魔に変貌したパワハラ女上司 時間も場所も忘れて朝まで舐め合い不倫性交に溺れた 愛弓りょう</p>
+          <p class="reason">愛弓りょう · 主人库存里 愛弓りょう 浓度 16 部，这片是 JavBus 近期新番候选。</p>
+          <div class="links-row">
+            <a class="watch-btn" href="https://missav.ws/en/jur-758" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a>
+          </div>
+        </div>
+        
+        <div class="rec-card film">
+          <div class="rec-kicker">2026-06-19 · 新番候选</div>
+          <h3>JUR-734</h3>
+          <p class="rec-title">性欲が強過ぎる彼女の母がどストライクな僕は、彼女に内緒で何度も何度も勃起チ○ポを捧げています…。 愛弓りょう</p>
+          <p class="reason">愛弓りょう · 主人库存里 愛弓りょう 浓度 16 部，这片是 JavBus 近期新番候选。</p>
+          <div class="links-row">
+            <a class="watch-btn" href="https://missav.ws/en/jur-734" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a>
+          </div>
+        </div>
+        
+        <div class="rec-card film">
+          <div class="rec-kicker">2026-05-21 · 新番候选</div>
+          <h3>JUR-708</h3>
+          <p class="rec-title">吹き出る汗、吹き飛ぶ理性―。 宙に浮くほどイキ飛び跳ねる、真夏の大痙攣エビ反り不倫SEX。 愛弓りょう</p>
+          <p class="reason">愛弓りょう · 主人库存里 愛弓りょう 浓度 16 部，这片是 JavBus 近期新番候选。</p>
+          <div class="links-row">
+            <a class="watch-btn" href="https://missav.ws/en/jur-708" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a>
+          </div>
+        </div>
+        
+        <div class="rec-card film">
+          <div class="rec-kicker">2026-07-02 · 新番候选</div>
+          <h3>BIBIVR-169</h3>
+          <p class="rec-title">【VR】都内某所にあるハメ放題のセクシーラウンジで人生終了するくらい金も精子も注ぎ込み！！たっぷりじゅぽじゅぽW責め 弥生みづき 末広純</p>
+          <p class="reason">弥生みづき · 主人库存里 弥生みづき 浓度 11 部，这片是 JavBus 近期新番候选。</p>
+          <div class="links-row">
+            <a class="watch-btn" href="https://missav.ws/en/bibivr-169" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a>
+          </div>
+        </div>
+        
+        <div class="rec-card film">
+          <div class="rec-kicker">2026-06-24 · 新番候选</div>
+          <h3>SAVR-1111</h3>
+          <p class="rec-title">【VR】高級デリ嬢をキメセクで堕とす！自らのルックスとテクニックを自慢してくる生意気本指No.1に媚薬を仕込んで連続アクメで徹底的に追い込んでみた。 弥生みづき</p>
+          <p class="reason">弥生みづき · 主人库存里 弥生みづき 浓度 11 部，这片是 JavBus 近期新番候选。</p>
+          <div class="links-row">
+            <a class="watch-btn" href="https://missav.ws/en/savr-1111" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a>
+          </div>
+        </div>
+        
+        <div class="rec-card film">
+          <div class="rec-kicker">2026-06-26 · 新番候选</div>
+          <h3>OFES-046</h3>
+          <p class="rec-title">10年ぶりに帰省した実家に引きこもるアラサーニート姉がだらしなさ過ぎてシコい 鷲尾めい</p>
+          <p class="reason">鷲尾めい · 主人库存里 鷲尾めい 浓度 10 部，这片是 JavBus 近期新番候选。</p>
+          <div class="links-row">
+            <a class="watch-btn" href="https://missav.ws/en/ofes-046" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a>
+          </div>
+        </div>
+        
+        <div class="rec-card film">
+          <div class="rec-kicker">2026-06-19 · 新番候选</div>
+          <h3>JYMA-108</h3>
+          <p class="rec-title">夫が出張中に欲情して男達のチ○ポを喰い漁る 爆乳尻オナホ妻 マゾ痴女のドスケベ嫁が肉感ボディでイキまくる 松本菜奈実</p>
+          <p class="reason">松本菜奈実 · 主人库存里 松本菜奈実 浓度 10 部，这片是 JavBus 近期新番候选。</p>
+          <div class="links-row">
+            <a class="watch-btn" href="https://missav.ws/en/jyma-108" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a>
+          </div>
+        </div>
+        
+        <div class="rec-card film">
+          <div class="rec-kicker">2026-05-02 · 新番候选</div>
+          <h3>SAVR-1042</h3>
+          <p class="rec-title">【VR】担任のみづき先生が生徒の将来を見据えて予告無しに射精耐久力を測りに来る抜き打ちSEX 弥生みづき</p>
+          <p class="reason">弥生みづき · 主人库存里 弥生みづき 浓度 11 部，这片是 JavBus 近期新番候选。</p>
+          <div class="links-row">
+            <a class="watch-btn" href="https://missav.ws/en/savr-1042" target="_blank" rel="noopener noreferrer">🍑 MissAV 观看</a>
+          </div>
+        </div>
+        </div></div>
+      </div>
+    </section>
+    
 
     <section>
       <div class="section-title"><span class="dot"></span>全演员索引</div>
